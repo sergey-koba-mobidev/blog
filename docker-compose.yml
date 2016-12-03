@@ -1,0 +1,16 @@
+version: '2'
+services:
+  db:
+    restart: always
+    image: postgres:latest
+    volumes:
+      - /var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: blog
+    command: postgres -c fsync=off
+
+  admin:
+    image: skoba-blog-admin:latest
+    command:  rackup
+    links:
+      - db
