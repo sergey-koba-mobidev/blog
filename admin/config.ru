@@ -2,9 +2,26 @@ require 'yaml'
 require 'sequel'
 require 'reform'
 require 'reform/form/dry'
+require 'trailblazer'
 require 'trailblazer-loader'
-require 'pry'
+require 'trailblazer/cell'
+require 'cell/erb'
+require 'trailblazer/operation/model'
+require 'trailblazer/operation/controller'
+require 'hanami/controller'
 require './router'
+
+# Dev
+if ENV['RACK_ENV'] == 'development'
+  require 'pry'
+  require 'better_errors'
+
+  Hanami::Controller.configure { handle_exceptions false } # let better_errors to handle them
+
+  use BetterErrors::Middleware
+  BetterErrors::Middleware.allow_ip! '0.0.0.0/0'
+  BetterErrors.application_root = File.dirname(__FILE__)
+end
 
 # Init Db
 db_config_file = File.join(File.dirname(__FILE__), "database.yml")
@@ -32,4 +49,4 @@ if DB
 end
 
 # Run rack app
-run Router.new.app
+run Router.app

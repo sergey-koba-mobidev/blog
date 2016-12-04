@@ -14,3 +14,5 @@ services:
     command:  rackup
     links:
       - db
+    environment:
+      RACK_ENV: production

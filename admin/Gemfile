@@ -21,5 +21,15 @@ gem 'cells-erb'
 # Web server
 gem 'puma'
 
-# Debugger
-gem 'pry'
+group :development do
+  # Rerun web server when code changes (see docker-compose.dev.yml)
+  gem 'rerun'
+
+  # Debugger
+  gem 'pry'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+
+  # Console
+  gem 'rack-console'
+end

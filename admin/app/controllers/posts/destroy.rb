@@ -1,13 +1,12 @@
-require 'hanami/controller'
-
 module App
   module Controllers
     module Posts
-      class New
-        include Hanami::Action
-
+      class Destroy < BaseAction
         def call(params)
-          self.body = 'OK'
+          run Post::Destroy do |op|
+
+          end
+          redirect_to '/'
         end
       end
     end

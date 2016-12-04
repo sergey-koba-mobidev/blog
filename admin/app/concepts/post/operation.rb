@@ -1,6 +1,3 @@
-require 'trailblazer'
-require 'trailblazer/operation/model'
-
 class Post < Sequel::Model(DB)
   class Create < Trailblazer::Operation
     include Model
@@ -12,6 +9,7 @@ class Post < Sequel::Model(DB)
 
       validation do
         required(:title).filled
+        required(:content).filled
       end
     end
 
@@ -28,6 +26,14 @@ class Post < Sequel::Model(DB)
       timestamp = Time.now
       model.created_at = timestamp
       model.updated_at = timestamp
+    end
+  end
+
+  class Destroy < Trailblazer::Operation
+
+    def process(params)
+      model = Post.find(id: params[:id])
+      model.destroy
     end
   end
 end

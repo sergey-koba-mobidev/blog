@@ -15,12 +15,14 @@ services:
 
   admin:
     build: admin
-    command:  rackup -p 3000 --host 0.0.0.0
+    command:  rerun -- rackup --port 3000 --host 0.0.0.0
     volumes:
       - ./admin:/app
     volumes_from:
       - admin-bundler-cache
     ports:
       - "3000:3000"
+    environment:
+      RACK_ENV: development
     stdin_open: true
     tty: true
