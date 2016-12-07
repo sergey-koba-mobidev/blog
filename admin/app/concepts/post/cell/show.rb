@@ -1,9 +1,6 @@
 class Post < Sequel::Model(DB)
   class Cell
-    class Show < Trailblazer::Cell
-      include ::Cell::Erb
-      include ::Cell::Erb
-
+    class Show < BaseCell
       property :id
       property :title
       property :content

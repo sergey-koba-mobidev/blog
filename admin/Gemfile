@@ -7,9 +7,10 @@ ruby '2.3.1'
 gem 'sequel'
 gem 'pg'
 
-# Routes and controllers
+# Hanami
 gem 'hanami-router'
 gem 'hanami-controller'
+gem 'hanami-helpers'
 
 # Trailblazer
 gem 'dry-validation'
@@ -18,6 +19,7 @@ gem 'trailblazer-loader'
 gem 'trailblazer-cells'
 gem 'cells-erb'
 gem 'formular'
+gem 'will_paginate'
 
 # Web server
 gem 'puma'

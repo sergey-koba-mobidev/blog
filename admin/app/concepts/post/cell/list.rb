@@ -1,10 +1,12 @@
 class Post < Sequel::Model(DB)
   class Cell
-    class List < Trailblazer::Cell
-      include ::Cell::Erb
-
+    class List < BaseCell
       def posts
         @options[:collection]
+      end
+
+      def pagination_base_url
+        ''
       end
 
       def show

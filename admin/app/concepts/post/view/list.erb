@@ -1,5 +1,6 @@
 <h1>Post List</h1>
-<a href="<%= Router.path(:new_post) %>">Add new Post</a>
+<%= link_to 'Add new Post', Router.path(:new_post) %>
 <div>
  <%= cell(Post::Cell::Show, collection: posts).() %>
 </div>
+<%= will_paginate posts %>

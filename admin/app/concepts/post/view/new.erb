@@ -1,5 +1,10 @@
 <h1>New Post</h1>
-<%= form(model, Router.path(:create_post)) do |f| %>
+<% f =  form(model, Router.path(:create_post)) %>
+<%= f.start %>
+  <%= f.error_notification %>
+  <%= f.error :title %>
   <%= f.input :title, label: 'Title' %>
+  <%= f.error :content %>
   <%= f.textarea :content, label: 'Content' %>
-<% end %>
+  <%= f.submit value: "Create" %>
+<%= f.end %>

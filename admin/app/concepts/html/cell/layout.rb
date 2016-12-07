@@ -1,8 +1,6 @@
 module Html
   module Cell
-    class Layout < Trailblazer::Cell
-      include ::Cell::Erb
-
+    class Layout < BaseCell
       def show(&block)
         render(&block)
       end

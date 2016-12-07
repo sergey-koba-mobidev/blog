@@ -10,7 +10,11 @@ require 'formular'
 require 'trailblazer/operation/model'
 require 'trailblazer/operation/controller'
 require 'hanami/controller'
+require 'hanami/helpers'
 require './router'
+
+# Load lib
+Dir[File.join(File.dirname(__FILE__), 'lib', '**', '*.rb')].each {|file| require file }
 
 Formular::Helper.builder= :bootstrap3
 
@@ -32,6 +36,9 @@ if File.exist?(db_config_file)
   config = YAML.load(File.read(db_config_file))
   DB = Sequel.connect(config)
   Sequel.extension :migration
+  Sequel.extension :pagination
+  Sequel::Model.db.extension(:pagination)
+  require 'will_paginate/sequel'
 end
 
 # Use dry validations
