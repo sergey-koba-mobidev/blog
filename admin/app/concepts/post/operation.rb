@@ -29,11 +29,23 @@ class Post < Sequel::Model(DB)
     end
   end
 
-  class Destroy < Trailblazer::Operation
+  class Update < Create
+    model Post, :update
 
+    def model!(params)
+      Post[params[:id]]
+    end
+
+    private
+
+    def set_timestamps
+      model.updated_at = Time.now
+    end
+  end
+
+  class Destroy < Trailblazer::Operation
     def process(params)
-      model = Post.find(id: params[:id])
-      model.destroy
+      Post[params[:id]].destroy
     end
   end
 

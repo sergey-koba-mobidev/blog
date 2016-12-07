@@ -1,6 +1,8 @@
-<div>
-  <h4><%= "##{id} #{title}" %></h4>
-  <p><%= content %></p>
-  <p><%= created_at %></p>
-  <a href="<%= Router.path(:destroy_post, id: id) %>">Delete</a>
-</div>
+<tr>
+  <td><%= id %></td>
+  <td><%= title %></td>
+  <td><%= content %></td>
+  <td><%= created_at %></td>
+  <td><%= link_to 'Edit', Router.path(:edit_post, id: id) %></td>
+  <td><%= link_to 'Delete', Router.path(:destroy_post, id: id) %></td>
+</tr>

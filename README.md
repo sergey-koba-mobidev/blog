@@ -15,7 +15,6 @@
 - to list all routes type in console `Router.print_routes`
 
 ## TODO:
-- split config.ru to different files
-- add post update
 - add authentication
 - add webpack and bootstrap
+- messages to user

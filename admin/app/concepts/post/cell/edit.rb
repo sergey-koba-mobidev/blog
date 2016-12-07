@@ -1,10 +1,14 @@
 class Post < Sequel::Model(DB)
   class Cell
-    class New < BaseCell
+    class Edit < BaseCell
       include Formular::Helper
 
       def form_path
-        Router.path(:create_post)
+        Router.path(:update_post, id: model.id)
+      end
+
+      def show
+        render :new
       end
     end
   end

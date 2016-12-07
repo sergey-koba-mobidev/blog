@@ -1,6 +1,14 @@
 <h1>Post List</h1>
 <%= link_to 'Add new Post', Router.path(:new_post) %>
-<div>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Created At</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
  <%= cell(Post::Cell::Show, collection: posts).() %>
-</div>
+</table>
 <%= will_paginate posts %>

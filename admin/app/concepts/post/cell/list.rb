@@ -8,10 +8,6 @@ class Post < Sequel::Model(DB)
       def pagination_base_url
         ''
       end
-
-      def show
-        render
-      end
     end
   end
 end
