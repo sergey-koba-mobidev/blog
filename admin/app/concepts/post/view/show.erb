@@ -1,5 +1,6 @@
 <div>
   <h4><%= "##{id} #{title}" %></h4>
   <p><%= content %></p>
+  <p><%= created_at %></p>
   <a href="<%= Router.path(:destroy_post, id: id) %>">Delete</a>
 </div>

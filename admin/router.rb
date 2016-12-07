@@ -6,8 +6,9 @@ class Router
   def self.app
     @@router = Hanami::Router.new(namespace: App::Controllers) do
       get '/', to: 'posts#index'
-      post '/posts', to: 'posts#create'
+      post '/posts', to: 'posts#create', as: :create_post
       get '/posts/destroy/:id', to: 'posts#destroy', as: :destroy_post
+      get '/posts/new', to: 'posts#new', as: :new_post
     end
 
     @@router

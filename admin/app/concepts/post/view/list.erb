@@ -1,3 +1,5 @@
+<h1>Post List</h1>
+<a href="<%= Router.path(:new_post) %>">Add new Post</a>
 <div>
  <%= cell(Post::Cell::Show, collection: posts).() %>
 </div>

@@ -6,10 +6,13 @@ require 'trailblazer'
 require 'trailblazer-loader'
 require 'trailblazer/cell'
 require 'cell/erb'
+require 'formular'
 require 'trailblazer/operation/model'
 require 'trailblazer/operation/controller'
 require 'hanami/controller'
 require './router'
+
+Formular::Helper.builder= :bootstrap3
 
 # Dev
 if ENV['RACK_ENV'] == 'development'

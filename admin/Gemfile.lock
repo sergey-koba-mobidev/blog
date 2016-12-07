@@ -53,6 +53,9 @@ GEM
     erbse (0.0.2)
     erubis (2.7.0)
     ffi (1.9.14)
+    formular (0.2.1)
+      declarative (~> 0.0.4)
+      uber (~> 0.0.11)
     hanami-controller (0.8.0)
       hanami-utils (~> 0.9)
       rack (~> 1.6, >= 1.6.2)
@@ -117,6 +120,7 @@ DEPENDENCIES
   binding_of_caller
   cells-erb
   dry-validation
+  formular
   hanami-controller
   hanami-router
   pg

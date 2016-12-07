@@ -17,6 +17,7 @@ gem 'trailblazer'
 gem 'trailblazer-loader'
 gem 'trailblazer-cells'
 gem 'cells-erb'
+gem 'formular'
 
 # Web server
 gem 'puma'
