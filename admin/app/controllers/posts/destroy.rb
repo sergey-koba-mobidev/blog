@@ -1,7 +1,7 @@
 module App
   module Controllers
     module Posts
-      class Destroy < BaseAction
+      class Destroy < Posts::Base
         def call(params)
           run Post::Destroy do |op|
 

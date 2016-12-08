@@ -24,6 +24,17 @@ class MyCLI < Thor
         Sequel::Migrator.run(DB, File.join(File.dirname(__FILE__), 'migrations'))
     end
   end
+
+  desc 'seed_admin PASSWORD', 'Generate admin user with PASSWORD'
+    def seed_admin(password)
+        u = User.find(username: 'skoba')
+        if u.nil?
+            User::Create.(username: 'skoba', email: 'desgnkiss@gmail.com', password: password)
+            puts 'Admin was created!'
+        else
+            puts 'Admin already exists!'
+        end
+    end
 end
 
 MyCLI.start(ARGV)

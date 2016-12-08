@@ -1,0 +1,10 @@
+<h1>Login</h1>
+<% f =  form(model, '') %>
+<%= f.start %>
+  <%= f.error_notification %>
+  <%= f.error :login %>
+  <%= f.input :login, label: 'Login' %>
+  <%= f.error :password %>
+  <%= f.input :password, label: 'Password' %>
+  <%= f.submit value: "Login" %>
+<%= f.end %>

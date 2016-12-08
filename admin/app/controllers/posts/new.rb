@@ -1,7 +1,7 @@
 module App
   module Controllers
     module Posts
-      class New < BaseAction
+      class New < Posts::Base
         def call(params)
           render_layout Post::Cell::New.(Post.new)
         end

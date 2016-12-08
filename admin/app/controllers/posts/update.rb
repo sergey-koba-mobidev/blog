@@ -1,7 +1,7 @@
 module App
   module Controllers
     module Posts
-      class Update < BaseAction
+      class Update < Posts::Base
         def call(params)
           run Post::Update, params: params.env['rack.request.form_hash'].merge(id: params[:id]) do |op|
             redirect_to '/'

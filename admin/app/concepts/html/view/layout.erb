@@ -3,6 +3,7 @@
   <title>One programmer blog</title>
 </head>
 <body>
+  <%= cell(Html::Cell::Menu, nil, current_user: current_user) %>
   <%= yield %>
 </body>
 </html>

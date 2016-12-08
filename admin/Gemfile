@@ -21,6 +21,9 @@ gem 'cells-erb'
 gem 'formular'
 gem 'will_paginate'
 
+# Authentication
+gem 'bcrypt'
+
 # Web server
 gem 'puma'
 
