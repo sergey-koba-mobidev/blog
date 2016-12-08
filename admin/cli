@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+require "thor"
+require "logger"
+require './loaders'
+
+def use(*)
+end
+fake_load 'app.rb'
+
+class MyCLI < Thor
+  desc 'routes', 'List all app routes'
+  def routes
+    Router.print_routes
+  end
+
+  desc 'db_migrate [VERSION]', 'Migrate to VERSION or latest'
+  def db_migrate(version = nil)
+    DB.logger = Logger.new($stdout)
+    if version
+        puts "Migrating to version #{version}"
+        Sequel::Migrator.run(DB, File.join(File.dirname(__FILE__), 'migrations'), target: version.to_i)
+    else
+        puts "Migrating to latest"
+        Sequel::Migrator.run(DB, File.join(File.dirname(__FILE__), 'migrations'))
+    end
+  end
+end
+
+MyCLI.start(ARGV)

@@ -21,6 +21,7 @@ class Router
   end
 
   def self.print_routes
+    self.app if @@router.nil?
     puts @@router.inspector.to_s
   end
 end

@@ -1,3 +1,6 @@
+require 'yaml'
+require 'sequel'
+
 # Init Db
 db_config_file = File.join(File.dirname(__FILE__), "database.yml")
 if File.exist?(db_config_file)

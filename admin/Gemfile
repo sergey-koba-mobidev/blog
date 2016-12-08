@@ -24,6 +24,9 @@ gem 'will_paginate'
 # Web server
 gem 'puma'
 
+# Cli
+gem 'thor'
+
 group :development do
   # Rerun web server when code changes (see docker-compose.dev.yml)
   gem 'rerun'
