@@ -1,10 +1,13 @@
-<h1>New Post</h1>
-<% f =  form(model, form_path) %>
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">New Post</h1>
+  </div>
+</div>
+
+<% f = form(model, form_path, builder: :bootstrap3) %>
 <%= f.start %>
-  <%= f.error_notification %>
-  <%= f.error :title %>
-  <%= f.input :title, label: 'Title' %>
-  <%= f.error :content %>
-  <%= f.textarea :content, label: 'Content' %>
-  <%= f.submit value: "Save" %>
+<%= f.error_notification %>
+<%= f.input :title, label: 'Title' %>
+<%= f.textarea :content, label: 'Content' %>
+<%= f.submit value: 'Save', class: %w(btn-lg btn-success) %>
 <%= f.end %>

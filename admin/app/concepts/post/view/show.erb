@@ -1,8 +1,7 @@
 <tr>
   <td><%= id %></td>
   <td><%= title %></td>
-  <td><%= content %></td>
   <td><%= created_at %></td>
-  <td><%= link_to 'Edit', Router.path(:edit_post, id: id) %></td>
-  <td><%= link_to 'Delete', Router.path(:destroy_post, id: id) %></td>
+  <td><%= link_to 'Edit', Router.path(:edit_post, id: id), class: 'btn btn-primary' %></td>
+  <td><%= link_to 'Delete', Router.path(:destroy_post, id: id), class: 'btn btn-danger' %></td>
 </tr>

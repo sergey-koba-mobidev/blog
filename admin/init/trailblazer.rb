@@ -16,6 +16,3 @@ Reform::Form.class_eval { feature Reform::Form::Dry }
 Trailblazer::Loader.new.(concepts_root: 'app/concepts/') do |file|
   load(file)
 end
-
-# Formular
-Formular::Helper.builder = :bootstrap3

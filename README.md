@@ -22,5 +22,5 @@
 - see commands list `dcg run admin ./cli help`
 
 ## TODO:
-- add webpack and bootstrap
-- messages to user
+- messages to user and redirects
+- active status, slug, seo fields for posts
