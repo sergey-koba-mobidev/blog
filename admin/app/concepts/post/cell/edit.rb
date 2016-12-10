@@ -7,6 +7,10 @@ class Post < Sequel::Model(DB)
         Router.path(:update_post, id: model.id)
       end
 
+      def form_action_title
+        'Edit'
+      end
+
       def show
         render :new
       end

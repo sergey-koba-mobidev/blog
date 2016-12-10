@@ -6,10 +6,16 @@ class Post < Sequel::Model(DB)
     contract do
       property :title
       property :content
+      property :slug
+      property :seo_description
+      property :seo_keywords
+      property :tags
+      property :active
 
       validation do
         required(:title).filled
         required(:content).filled
+        required(:slug).filled
       end
     end
 
