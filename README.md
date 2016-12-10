@@ -22,5 +22,5 @@
 - see commands list `dcg run admin ./cli help`
 
 ## TODO:
-- messages to user and redirects
 - active status, slug, seo fields for posts
+- wysiwyg

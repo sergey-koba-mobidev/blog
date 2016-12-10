@@ -5,6 +5,10 @@ module Html
         @options[:current_user]
       end
 
+      def flashes
+        @options[:flashes] || []
+      end
+
       def show(&block)
         render(&block)
       end

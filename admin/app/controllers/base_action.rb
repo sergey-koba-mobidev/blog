@@ -24,7 +24,12 @@ module App
       end
 
       def render_layout(content = '')
-        self.body = Html::Cell::Layout.new(nil, current_user: current_user).() { content }
+        self.body = Html::Cell::Layout.new(nil, current_user: current_user, flashes: session.delete(:flashes)).() { content }
+      end
+
+      def add_flash_message(message, type = 'info')
+        session[:flashes] ||= []
+        session[:flashes] << OpenStruct.new({message: message, type: type})
       end
     end
   end

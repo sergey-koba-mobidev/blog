@@ -4,7 +4,7 @@ module App
       class Destroy < Posts::Base
         def call(params)
           run Post::Destroy do |op|
-
+            add_flash_message 'Deleted a Post.', 'success'
           end
           redirect_to '/'
         end

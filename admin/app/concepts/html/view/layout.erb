@@ -49,7 +49,8 @@
   </nav>
 
   <div id="page-wrapper">
-  <%= yield %>
+    <%= cell(Html::Cell::FlashMessage, collection: flashes).() %>
+    <%= yield %>
   </div>
 </div>
 <script src="/public/bower_components/jquery/dist/jquery.min.js"></script>

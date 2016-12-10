@@ -1,4 +1,5 @@
 require 'bcrypt'
+require 'ostruct'
 require 'hanami/controller'
 require 'hanami/action/session'
 require 'hanami/helpers'
