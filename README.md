@@ -19,9 +19,10 @@ A Blog completely built without rails
 
 ## DB Migrations
 - migrate to `dcg run admin ./cli db_migrate [VERSION]`, see: [Sequel migrations](http://sequel.jeremyevans.net/rdoc/files/doc/migration_rdoc.html)
+- rollback to - just run `dcg run admin ./cli db_migrate [VERSION]` with VERSION you want to rollback to 
 
 ## Cli
 - see commands list `dcg run admin ./cli help`
 
 ## TODO:
-- wysiwyg
+- front

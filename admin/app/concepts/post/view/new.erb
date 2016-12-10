@@ -4,7 +4,7 @@
   </div>
 </div>
 
-<% f = form(model, form_path, builder: :bootstrap3) %>
+<% f = form(model, form_path, builder: :bootstrap3, id: 'post-form') %>
 <%= f.start %>
 <%= f.error_notification %>
 <div class="row">
@@ -18,7 +18,50 @@
   </div>
 </div>
 <%= f.input :tags, label: 'Tags' %>
-<%= f.textarea :content, label: 'Content' %>
+<%= f.error :content %>
+<%= f.hidden :content, value: '' %>
+<div class="editable"><%= model.content %></div>
 <%= f.checkbox :active, label: 'Active', value: model.active %>
 <%= f.submit value: 'Save', class: %w(btn-lg btn-success) %>
 <%= f.end %>
+<script>
+  $(function () {
+    $("#post-form").submit(function (event) {
+      event.preventDefault();
+      var contentObj = editor.serialize();
+      $("#content").val(contentObj['element-0'].value);
+      this.submit();
+    });
+
+    var editor = new MediumEditor('.editable', {
+      buttonLabels: 'fontawesome',
+      extensions: {
+        table: new MediumEditorTable(),
+        embedButton: new EmbedButtonExtension({
+          embedOpts: {
+            oembedProxy: "https://iframe.ly/api/oembed?api_key=cfbfb6143da0b54b3c938a&url="
+          }
+        })
+      },
+      toolbar: {
+        buttons: [
+          'bold',
+          'italic',
+          'underline',
+          'anchor',
+          'h2',
+          'h3',
+          'quote',
+          'unorderedlist',
+          'orderedlist',
+          'image',
+          'embedButton',
+          'table',
+          'removeFormat'
+        ]
+      },
+      static: true,
+      sticky: true
+    });
+  });
+</script>
