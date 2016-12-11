@@ -25,4 +25,12 @@ A Blog completely built without rails
 - see commands list `dcg run admin ./cli help`
 
 ## TODO:
-- front
+- Nginx proxy container
+- Post detailed page
+- Share plugin
+- Tests
+- only active posts and order by date
+- Tags
+- Search by tag
+- Domain name
+- Docker deploy

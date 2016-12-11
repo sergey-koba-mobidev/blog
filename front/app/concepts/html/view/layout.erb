@@ -8,6 +8,7 @@
   <title>One developer blog</title>
 
   <link href="/public/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/public/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link href="/public/stylesheets/blog.css" rel="stylesheet">
 
   <!--[if lt IE 9]>
@@ -18,12 +19,15 @@
 <body>
 <div class="container">
   <div class="row" id="content-wrapper">
+    <div class="col-md-9" id="content-column">
+      <%= yield %>
+    </div>
     <div class="col-md-3" id="author-column">
       <h1>One Dev Blog</h1>
       <div class="avatar"><img src="https://s.gravatar.com/avatar/b7e4c4440248d7e0229484b7de2dd96a?s=170"></div>
-    </div>
-    <div class="col-md-9" id="content-column">
-      <%= yield %>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/serhii-koba" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+      </div>
     </div>
   </div>
 </div>

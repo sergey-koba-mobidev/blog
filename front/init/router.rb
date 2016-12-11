@@ -7,6 +7,7 @@ class Router
     @@router = Hanami::Router.new(namespace: App::Controllers) do
       get '/', to: 'posts#index'
       get '/page/:page', to: 'posts#index'
+      get '/article/:slug', to: 'posts#show', as: :show_post
     end
     @@router
   end
