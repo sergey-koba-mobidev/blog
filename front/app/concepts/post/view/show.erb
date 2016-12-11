@@ -1,5 +1,16 @@
-<tr>
-  <td><%= id %></td>
-  <td><%= title %></td>
-  <td><%= created_at %></td>
-</tr>
+<article>
+  <div class="row">
+    <div class="col-md-3 post-list-info">
+      <div class="timeline"><%= post_date %></div>
+      <div class="tags">Tags:
+        <span class="label label-default">Docker</span>
+        <span class="label label-default">Arduino</span>
+        <span class="label label-default">Raspberry Pi</span>
+      </div>
+    </div>
+    <div class="col-md-9 post-list-content">
+      <h2><%= title %></h2>
+      <p><%= content %></p>
+    </div>
+  </div>
+</article>

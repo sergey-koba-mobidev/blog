@@ -9,6 +9,10 @@ class Post < Sequel::Model(DB)
       property :seo_keywords
       property :created_at
       property :updated_at
+
+      def post_date
+        model.created_at.strftime('%b %d, %Y')
+      end
     end
   end
 end

@@ -27,6 +27,9 @@ gem 'puma'
 # Cli
 gem 'thor'
 
+# Css
+gem 'sass'
+
 group :development do
   # Rerun web server when code changes (see docker-compose.dev.yml)
   gem 'rerun'
