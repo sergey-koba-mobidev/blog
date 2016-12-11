@@ -1,3 +1,5 @@
 .idea
 admin/tmp
 admin/public/bower_components
+front/tmp
+front/public/bower_components

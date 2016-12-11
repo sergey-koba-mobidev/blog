@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+require "thor"
+require "logger"
+require './loaders'
+
+def use(*)
+end
+fake_load 'app.rb'
+
+class MyCLI < Thor
+  desc 'routes', 'List all app routes'
+  def routes
+    Router.print_routes
+  end
+end
+
+MyCLI.start(ARGV)

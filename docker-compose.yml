@@ -16,3 +16,11 @@ services:
       - db
     environment:
       RACK_ENV: production
+
+  front:
+    image: skoba-blog:latest
+    command:  rackup
+    links:
+      - db
+    environment:
+      RACK_ENV: production

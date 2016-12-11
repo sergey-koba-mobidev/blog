@@ -1,0 +1,12 @@
+{
+  "name": "blog",
+  "homepage": "https://github.com/sergey-koba-mobidev/blog",
+  "authors": [
+    "Serhii Koba"
+  ],
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+
+  }
+}
