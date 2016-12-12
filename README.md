@@ -26,11 +26,10 @@ A Blog completely built without rails
 
 ## TODO:
 - Nginx proxy container
-- Post detailed page
-- Share plugin
+- read more divider
 - Tests
-- only active posts and order by date
-- Tags
 - Search by tag
 - Domain name
 - Docker deploy
+- mobile styles
+- discuss plugin

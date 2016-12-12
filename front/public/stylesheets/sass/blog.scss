@@ -2,6 +2,23 @@
   background-color: #11161c;
 }
 
+footer {
+  background-color: #f8f8f8;
+  color: #11161c;
+
+  .fork-link{
+    color: #11161c;
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-decoration: none;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
 #author-column {
   background-color: #11161c;
 
@@ -32,6 +49,14 @@
         color: #ccc;
       }
     }
+  }
+
+  .about-author {
+    color: #6a6a6a;
+    font-weight: bold;
+    text-align: justify;
+    padding: 40px;
+    font-size: 14px;
   }
 }
 

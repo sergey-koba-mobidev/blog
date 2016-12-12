@@ -8,9 +8,9 @@
     <div class="col-md-3 post-list-info">
       <div class="timeline"><%= post_date %></div>
       <div class="tags">Tags:
-        <span class="label label-default">Docker</span>
-        <span class="label label-default">Arduino</span>
-        <span class="label label-default">Raspberry Pi</span>
+        <% tags.each do |tag| %>
+        <span class="label label-default"><%= tag %></span>
+        <% end %>
       </div>
     </div>
   </div>

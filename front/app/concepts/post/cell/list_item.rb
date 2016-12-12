@@ -13,6 +13,10 @@ class Post < Sequel::Model(DB)
       def post_date
         model.created_at.strftime('%b %d, %Y')
       end
+
+      def tags
+        model.tags.split(',')
+      end
     end
   end
 end

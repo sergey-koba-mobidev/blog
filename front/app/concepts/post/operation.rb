@@ -9,7 +9,7 @@ class Post < Sequel::Model(DB)
     end
 
     def process(params)
-      @model = Post.dataset.paginate(params[:page], PER_PAGE)
+      @model = Post.dataset.where(active: true).order(:created_at).reverse.paginate(params[:page], PER_PAGE)
     end
   end
 end
