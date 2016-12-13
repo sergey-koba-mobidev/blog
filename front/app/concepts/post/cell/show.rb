@@ -20,6 +20,14 @@ class Post < Sequel::Model(DB)
       def content
         model.content.gsub! '---read-more---', ''
       end
+
+      def url
+        "http://#{options[:host]}#{Router.path(:show_post, slug: model.slug)}"
+      end
+
+      def discus_identifier
+        "#{model.id}-#{ENV['RACK_ENV']}"
+      end
     end
   end
 end

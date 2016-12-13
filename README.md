@@ -31,4 +31,3 @@ A Blog completely built without rails
 - Domain name
 - Docker deploy
 - mobile styles
-- discuss plugin
