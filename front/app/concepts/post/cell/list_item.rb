@@ -3,7 +3,6 @@ class Post < Sequel::Model(DB)
     class ListItem < BaseCell
       property :id
       property :title
-      property :content
       property :slug
       property :seo_description
       property :seo_keywords
@@ -16,6 +15,10 @@ class Post < Sequel::Model(DB)
 
       def tags
         model.tags.split(',')
+      end
+
+      def content
+        model.content.split('---read-more---')[0]
       end
     end
   end

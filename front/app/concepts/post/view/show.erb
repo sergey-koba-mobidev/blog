@@ -3,7 +3,7 @@
     <div class="col-md-9 post-list-content">
       <h2><%= title %></h2>
       <p><%= content %></p>
-      <hr>
+      <%= link_to 'Back',  '/', class: 'btn btn-info pull-right'%>
     </div>
     <div class="col-md-3 post-list-info">
       <div class="timeline"><%= post_date %></div>
