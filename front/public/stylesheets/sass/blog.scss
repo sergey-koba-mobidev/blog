@@ -63,6 +63,13 @@ footer {
 #content-column {
   padding: 0px;
   background-color: #f8f8f8;
+
+  h2 {
+    background-color: white;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 }
 
 article {
@@ -104,6 +111,16 @@ article {
       padding-left: 20px;
       color: #6a6a6a;
       font-weight: bold;
+
+      a.tag {
+        color: white;
+        text-decoration: none;
+        display: block;
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
     }
   }
   .post-list-content {
@@ -123,6 +140,10 @@ article {
       }
     }
   }
+}
+
+.pagination {
+  padding-left: 20px;
 }
 
 @media only screen and (max-device-width: 990px) {

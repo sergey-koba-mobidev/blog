@@ -14,7 +14,7 @@ class Post < Sequel::Model(DB)
       end
 
       def tags
-        model.tags.split(',')
+        model.tags.split(',').map{ |t| t.strip }
       end
 
       def content

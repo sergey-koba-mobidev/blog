@@ -15,7 +15,7 @@ module WillPaginate
     protected
 
     def url(page)
-      return '/' if page == 1
+      return @template.respond_to?(:pagination_base_url) ? @template.pagination_base_url : '/' if page == 1
       "#{@template.respond_to?(:pagination_base_url) ? @template.pagination_base_url : ''}/page/#{page}"
     end
 

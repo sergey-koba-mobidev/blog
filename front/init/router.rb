@@ -8,6 +8,8 @@ class Router
       get '/', to: 'posts#index'
       get '/page/:page', to: 'posts#index'
       get '/article/:slug', to: 'posts#show', as: :show_post
+      get '/tag/:tag', to: 'tags#show', as: :show_tag
+      get '/tag/:tag/page/:page', to: 'tags#show'
     end
     @@router
   end

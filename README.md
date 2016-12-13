@@ -27,6 +27,5 @@ A Blog completely built without rails
 ## TODO:
 - Nginx proxy container
 - Tests
-- Search by tag
 - Domain name
 - Docker deploy

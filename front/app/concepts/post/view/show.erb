@@ -23,10 +23,8 @@
     </div>
     <div class="col-md-3 post-list-info">
       <div class="timeline"><%= post_date %></div>
-      <div class="tags">Tags:
-        <% tags.each do |tag| %>
-        <span class="label label-default"><%= tag %></span>
-        <% end %>
+      <div class="tags">
+        <%= cell(Tag::Cell::Label, collection: tags).() %>
       </div>
     </div>
   </div>
