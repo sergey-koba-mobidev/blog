@@ -30,4 +30,3 @@ A Blog completely built without rails
 - Search by tag
 - Domain name
 - Docker deploy
-- mobile styles
