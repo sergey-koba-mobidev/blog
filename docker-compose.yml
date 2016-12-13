@@ -1,5 +1,11 @@
 version: '2'
 services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
   db:
     restart: always
     image: postgres:latest
@@ -16,6 +22,7 @@ services:
       - db
     environment:
       RACK_ENV: production
+      VIRTUAL_HOST: admin.1devblog.net
 
   front:
     image: skoba-blog:latest
@@ -24,3 +31,4 @@ services:
       - db
     environment:
       RACK_ENV: production
+      VIRTUAL_HOST: 1devblog.net

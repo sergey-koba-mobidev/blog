@@ -7,7 +7,7 @@ A Blog completely built without rails
 - run in root `dcg build`, then `./bin/setup.sh`
 - run `dcg run admin ./cli seed_admin pass` to create user `skoba` with pass `pass`
 - run app `dcg up -d`
-- go to `localhost:4001`
+- go to [http://1devblog.local](http://1devblog.local) for Front and [http://admin.1devblog.local](http://admin.1devblog.local) for Admin 
 - stop app `dcg stop`
 - restart admin app `dcg restart admin`. In develop app is auto-restarted on any code change via `rerun` gem
 
@@ -25,7 +25,6 @@ A Blog completely built without rails
 - see commands list `dcg run admin ./cli help`
 
 ## TODO:
-- Nginx proxy container
 - Tests
 - Domain name
 - Docker deploy

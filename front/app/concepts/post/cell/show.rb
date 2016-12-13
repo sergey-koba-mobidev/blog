@@ -18,7 +18,8 @@ class Post < Sequel::Model(DB)
       end
 
       def content
-        model.content.gsub! '---read-more---', ''
+        c = model.content.gsub! '---read-more---', ''
+        c.nil? ? model.content : c
       end
 
       def url

@@ -24,6 +24,7 @@ services:
       - "4001:4001"
     environment:
       RACK_ENV: development
+      VIRTUAL_HOST: admin.1devblog.local
     stdin_open: true
     tty: true
 
@@ -44,5 +45,6 @@ services:
       - "4002:4002"
     environment:
       RACK_ENV: development
+      VIRTUAL_HOST: 1devblog.local
     stdin_open: true
     tty: true
