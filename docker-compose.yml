@@ -6,6 +6,7 @@ services:
       - "80:80"
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
+
   db:
     restart: always
     image: postgres:latest
@@ -16,19 +17,19 @@ services:
     command: postgres -c fsync=off
 
   admin:
-    image: skoba-blog-admin:latest
+    image: 1devblog-admin:latest
     command:  rackup
     links:
       - db
     environment:
       RACK_ENV: production
-      VIRTUAL_HOST: admin.1devblog.net
+      VIRTUAL_HOST: admin.1devblog.org
 
   front:
-    image: skoba-blog:latest
+    image: 1devblog:latest
     command:  rackup
     links:
       - db
     environment:
       RACK_ENV: production
-      VIRTUAL_HOST: 1devblog.net
+      VIRTUAL_HOST: 1devblog.org

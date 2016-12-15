@@ -26,5 +26,5 @@ A Blog completely built without rails
 
 ## TODO:
 - Tests
-- Domain name
 - Docker deploy
+- DO Cname for admin
