@@ -17,7 +17,7 @@ services:
     command: postgres -c fsync=off
 
   admin:
-    image: 1devblog-admin:latest
+    image: sergkoba/blog:latest-admin
     command:  rackup
     links:
       - db
@@ -26,7 +26,7 @@ services:
       VIRTUAL_HOST: admin.1devblog.org
 
   front:
-    image: 1devblog:latest
+    image: sergkoba/blog:latest
     command:  rackup
     links:
       - db
