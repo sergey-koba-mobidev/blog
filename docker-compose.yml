@@ -6,7 +6,7 @@ services:
     labels:
       io.rancher.container.create_agent: 'true'
       io.rancher.container.agent.role: environmentAdmin
-    image: rancher/lb-service-haproxy:v0.4.2
+    image: rancher/lb-service-haproxy:v0.4.6
 
   db:
     restart: always

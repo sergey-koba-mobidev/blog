@@ -24,9 +24,6 @@ services:
       - "3000:3000"
     environment:
       RACK_ENV: development
-      VIRTUAL_HOST: admin.1devblog.local
-    stdin_open: true
-    tty: true
 
   front-bundler-cache:
     image: ruby:2.3.1
@@ -45,6 +42,3 @@ services:
       - "3001:3001"
     environment:
       RACK_ENV: development
-      VIRTUAL_HOST: 1devblog.local
-    stdin_open: true
-    tty: true

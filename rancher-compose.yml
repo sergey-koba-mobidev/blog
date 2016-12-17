@@ -9,16 +9,16 @@ services:
         path: ''
         priority: 1
         protocol: http
-        service: 1devblog/front
-        source_port: 3001
-        target_port: 80
+        service: front
+        source_port: 80
+        target_port: 3001
       - hostname: 'admin.1devblog.org'
         path: ''
         priority: 2
         protocol: http
-        service: 1devblog/admin
-        source_port: 3000
-        target_port: 80
+        service: admin
+        source_port: 80
+        target_port: 3000
       health_check:
         port: 42
         interval: 2000
