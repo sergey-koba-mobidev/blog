@@ -1,11 +1,12 @@
 version: '2'
 services:
-  nginx-proxy:
-    image: jwilder/nginx-proxy
+  bloglb:
     ports:
-      - "80:80"
-    volumes:
-      - /var/run/docker.sock:/tmp/docker.sock:ro
+    - 80:80/tcp
+    labels:
+      io.rancher.container.create_agent: 'true'
+      io.rancher.container.agent.role: environmentAdmin
+    image: rancher/lb-service-haproxy:v0.4.2
 
   db:
     restart: always
@@ -17,23 +18,23 @@ services:
     command: postgres -c fsync=off
 
   admin:
+    labels:
+      io.rancher.container.pull_image: always
     image: sergkoba/blog:latest-admin
     command:  rackup --port 3000 --host 0.0.0.0
     links:
       - db
-    ports:
-      - "3000:3000"
     environment:
       RACK_ENV: production
       VIRTUAL_HOST: admin.1devblog.org
 
   front:
+    labels:
+      io.rancher.container.pull_image: always
     image: sergkoba/blog:latest
     command:  rackup --port 3001 --host 0.0.0.0
     links:
       - db
-    ports:
-      - "3001:3001"
     environment:
       RACK_ENV: production
       VIRTUAL_HOST: 1devblog.org

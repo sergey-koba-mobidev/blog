@@ -19,6 +19,8 @@ COPY Gemfile /app/Gemfile
 COPY Gemfile.lock /app/Gemfile.lock
 RUN gem update bundler && bundle install --jobs 4
 
+EXPOSE 3000
+
 # Copy the rest of Rails source
 COPY . /app
 

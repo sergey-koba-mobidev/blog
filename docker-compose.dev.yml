@@ -20,6 +20,8 @@ services:
       - ./admin:/app
     volumes_from:
       - admin-bundler-cache
+    ports:
+      - "3000:3000"
     environment:
       RACK_ENV: development
       VIRTUAL_HOST: admin.1devblog.local
@@ -38,7 +40,9 @@ services:
     volumes:
       - ./front:/app
     volumes_from:
-        - front-bundler-cache
+      - front-bundler-cache
+    ports:
+      - "3001:3001"
     environment:
       RACK_ENV: development
       VIRTUAL_HOST: 1devblog.local

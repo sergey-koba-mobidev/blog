@@ -1,7 +1,30 @@
 version: '2'
 services:
-  nginx-proxy:
+  bloglb:
     scale: 1
+    lb_config:
+      certs: []
+      port_rules:
+      - hostname: '1devblog.org'
+        path: ''
+        priority: 1
+        protocol: http
+        service: 1devblog/front
+        source_port: 3001
+        target_port: 80
+      - hostname: 'admin.1devblog.org'
+        path: ''
+        priority: 2
+        protocol: http
+        service: 1devblog/admin
+        source_port: 3000
+        target_port: 80
+      health_check:
+        port: 42
+        interval: 2000
+        unhealthy_threshold: 3
+        healthy_threshold: 2
+        response_timeout: 2000
   db:
     scale: 1
   front:
