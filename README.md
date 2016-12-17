@@ -31,3 +31,4 @@ A Blog completely built without rails
 - add google analytics
 - add robots.txt
 - add favicon
+- add github and twitter
