@@ -28,3 +28,5 @@ A Blog completely built without rails
 - Tests
 - automate deploys
 - change lang
+- add google analytics
+- add robots.txt
