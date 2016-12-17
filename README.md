@@ -30,3 +30,4 @@ A Blog completely built without rails
 - change lang
 - add google analytics
 - add robots.txt
+- add favicon
