@@ -1,0 +1,10 @@
+version: '2'
+services:
+  nginx-proxy:
+    scale: 1
+  db:
+    scale: 1
+  front:
+    scale: 1
+  admin:
+    scale: 1

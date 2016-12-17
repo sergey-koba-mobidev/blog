@@ -18,18 +18,22 @@ services:
 
   admin:
     image: sergkoba/blog:latest-admin
-    command:  rackup
+    command:  rackup --port 3000 --host 0.0.0.0
     links:
       - db
+    ports:
+      - "3000:3000"
     environment:
       RACK_ENV: production
       VIRTUAL_HOST: admin.1devblog.org
 
   front:
     image: sergkoba/blog:latest
-    command:  rackup
+    command:  rackup --port 3001 --host 0.0.0.0
     links:
       - db
+    ports:
+      - "3001:3001"
     environment:
       RACK_ENV: production
       VIRTUAL_HOST: 1devblog.org
