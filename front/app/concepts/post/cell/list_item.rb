@@ -1,6 +1,6 @@
 class Post < Sequel::Model(DB)
   class Cell
-    class ListItem < BaseCell
+    class ListItem < Base
       property :id
       property :title
       property :slug
@@ -8,14 +8,6 @@ class Post < Sequel::Model(DB)
       property :seo_keywords
       property :created_at
       property :updated_at
-
-      def post_date
-        model.created_at.strftime('%b %d, %Y')
-      end
-
-      def tags
-        model.tags.split(',').map{ |t| t.strip }
-      end
 
       def content
         model.content.split('---read-more---')[0]

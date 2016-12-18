@@ -27,8 +27,7 @@ A Blog completely built without rails
 ## TODO:
 - Tests
 - automate deploys
-- change lang
-- add google analytics
-- add robots.txt
-- add favicon
-- add github and twitter
+- add multilang
+- add sitemap.xml
+- add twitter
+- seo tags for post page

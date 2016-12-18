@@ -3,7 +3,7 @@
     <div class="col-md-9 post-list-content">
       <h2><a href="<%= Router.path(:show_post, slug: slug) %>"><%= title %></a></h2>
       <p><%= content %></p>
-      <%= link_to 'Read more...',  Router.path(:show_post, slug: slug), class: 'btn btn-success pull-right read-more'%>
+      <%= link_to t.post.read_more,  Router.path(:show_post, slug: slug), class: 'btn btn-success pull-right read-more'%>
       <br />
       <hr>
     </div>

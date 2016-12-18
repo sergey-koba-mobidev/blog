@@ -27,6 +27,10 @@ footer {
     text-align: center;
     text-transform: uppercase;
     font-size: 30px;
+
+    a {
+      text-decoration: none;
+    }
   }
   .avatar {
     text-align: center;
@@ -42,6 +46,8 @@ footer {
     margin-top: 20px;
 
     a {
+      margin-left: 5px;
+      margin-right: 5px;
       font-size: 20px;
       color: white;
 
@@ -54,7 +60,6 @@ footer {
   .about-author {
     color: #6a6a6a;
     font-weight: bold;
-    text-align: justify;
     padding: 40px;
     font-size: 14px;
   }

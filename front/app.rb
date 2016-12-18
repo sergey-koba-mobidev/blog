@@ -5,6 +5,7 @@ require 'hanami/helpers'
 require './init/router'
 
 require_dir 'lib'
+fake_load 'init/r18n.rb'
 fake_load 'init/better_errors.rb'
 fake_load 'init/session.rb'
 fake_load 'init/db.rb'

@@ -1,6 +1,6 @@
 class Post < Sequel::Model(DB)
   class Cell
-    class Show < BaseCell
+    class Show < Base
       property :id
       property :title
       property :slug
@@ -9,13 +9,6 @@ class Post < Sequel::Model(DB)
       property :created_at
       property :updated_at
 
-      def post_date
-        model.created_at.strftime('%b %d, %Y')
-      end
-
-      def tags
-        model.tags.split(',').map{ |t| t.strip }
-      end
 
       def content
         c = model.content.gsub! '---read-more---', ''

@@ -30,6 +30,9 @@ gem 'thor'
 # Css
 gem 'sass'
 
+# Translation
+gem 'r18n-core'
+
 group :development do
   # Rerun web server when code changes (see docker-compose.dev.yml)
   gem 'rerun'

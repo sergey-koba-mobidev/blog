@@ -1,0 +1,11 @@
+general:
+  back: Back
+seo:
+  description: One developer blog
+author:
+  full_name: Serhii Koba
+  about: "A developer, who likes learning new stuff non-stop. Main languages are: PHP and Ruby. Doesn't hesitate playing with mobile and IoT. We live until we learn something."
+post:
+  read_more: Read more...
+tag:
+  search: Search by tag
