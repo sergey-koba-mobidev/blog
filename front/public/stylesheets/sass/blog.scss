@@ -86,10 +86,12 @@ article {
 
   &:first-child {
     .timeline {
-      margin-top: 40px;
+      margin-top: 10px;
     }
     .post-list-content {
-      padding-top: 40px;
+      h2 {
+        padding-top: 10px !important;
+      }
     }
   }
 
@@ -154,6 +156,8 @@ article {
 @media only screen and (max-device-width: 990px) {
   #content-column {
     background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   article {
     height: 100%;
@@ -164,7 +168,7 @@ article {
         margin-top: 0px;
       }
       .post-list-content {
-        padding-top: 10px;
+        padding-top: 0px;
         padding-bottom: 0px;
         border-right: 0;
 
@@ -173,10 +177,15 @@ article {
         }
       }
     }
-
+    .post-list-content{
+      hr {
+        visibility: hidden;
+      }
+    }
     .post-list-info {
       background-color: white;
       padding-bottom: 20px;
+      border-bottom: 1px solid #e7e7e8;
 
       .timeline {
         &:before {
