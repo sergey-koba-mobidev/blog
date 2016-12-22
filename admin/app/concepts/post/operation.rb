@@ -13,9 +13,19 @@ class Post < Sequel::Model(DB)
       property :active
 
       validation do
+        configure do
+          config.messages_file = 'config/error_messages.yml'
+          option :form
+
+          def unique?(value)
+            Post.exclude(id: form.model.id).where(slug: value).first.nil?
+          end
+        end
+
         required(:title).filled
         required(:content).filled
         required(:slug).filled
+        required(:slug).filled(:unique?)
       end
     end
 
@@ -38,9 +48,14 @@ class Post < Sequel::Model(DB)
   class Update < Create
     model Post, :update
 
+    contract do
+      property :id
+    end
+
     def model!(params)
       Post[params[:id]]
     end
+
 
     private
 

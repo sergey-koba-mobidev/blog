@@ -1,3 +1,4 @@
 en:
   errors:
     valid_login_password?: "login not found or wrong password"
+    unique?: "value is not unique"

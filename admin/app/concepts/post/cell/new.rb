@@ -10,6 +10,10 @@ class Post < Sequel::Model(DB)
       def form_path
         Router.path(:create_post)
       end
+
+      def preview_link
+        ''
+      end
     end
   end
 end

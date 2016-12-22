@@ -12,7 +12,7 @@ A Blog completely built without rails
 - restart admin app `dcg restart admin`. In develop app is auto-restarted on any code change via `rerun` gem
 
 ## Console
-- run `dvg run admin rack-console`
+- run `dcg run admin rack-console`
 
 ## Routes
 - all routes `dcg run admin ./cli routes`, see [Hanami routes](https://github.com/hanami/router)

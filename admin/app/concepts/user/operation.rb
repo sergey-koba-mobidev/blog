@@ -38,7 +38,6 @@ class User < Sequel::Model(DB)
       property :password, virtual: true
 
       validation do
-
         configure do
           config.messages_file = 'config/error_messages.yml'
           option :form

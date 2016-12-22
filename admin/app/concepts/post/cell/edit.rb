@@ -11,6 +11,10 @@ class Post < Sequel::Model(DB)
         'Edit'
       end
 
+      def preview_link
+        link_to raw('<i class="fa fa-eye"></i> Preview'), Constants::frontend_article_url + model.slug, class: 'btn', target: '_blank'
+      end
+
       def show
         render :new
       end

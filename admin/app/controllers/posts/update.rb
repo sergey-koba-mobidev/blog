@@ -5,7 +5,7 @@ module App
         def call(params)
           run Post::Update, params: params.env['rack.request.form_hash'].merge(id: params[:id]) do |op|
             add_flash_message 'Updated a Post.', 'success'
-            redirect_to '/'
+            redirect_to  Router.path(:edit_post, id: params[:id])
           end
           render_layout Post::Cell::Edit.(@form)
         end
