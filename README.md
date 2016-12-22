@@ -29,4 +29,5 @@ A Blog completely built without rails
 - automate deploys
 - add multilang
 - add sitemap.xml
-- subscrie for email notifications
+- subscribe for email notifications
+- add activated_at, and sort by it
