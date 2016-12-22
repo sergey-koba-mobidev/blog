@@ -10,8 +10,8 @@ module App
 
       protected
 
-      def render_layout(content = '')
-        self.body = Html::Cell::Layout.new.() { content }
+      def render_layout(content = '', options = {})
+        self.body = Html::Cell::Layout.new(nil, options).() { content }
       end
     end
   end

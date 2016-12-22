@@ -1,7 +1,9 @@
 general:
   back: Назад
 seo:
-  description: Блог одного веб-разработчика.
+  title: One developer blog
+  description: Делюсь опытом в Веб, мобильной разработке и IoT
+  keywords: web, mobile, iot
 author:
   full_name: Сергей Коба
   about: 'Цель: изучать и учить чему-то новому без остановки. Основные языки: PHP и Ruby. Также интересно: мобильная разработка, IoT и DevOps. Жизненное кредо: я жив, пока я учу что-то новое.'

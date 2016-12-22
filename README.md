@@ -30,4 +30,3 @@ A Blog completely built without rails
 - add multilang
 - add sitemap.xml
 - add twitter
-- seo tags for post page
