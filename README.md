@@ -31,3 +31,4 @@ A Blog completely built without rails
 - add sitemap.xml
 - subscribe for email notifications
 - add activated_at, and sort by it
+- backups
