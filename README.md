@@ -29,4 +29,4 @@ A Blog completely built without rails
 - automate deploys
 - add multilang
 - add sitemap.xml
-- add twitter
+- subscrie for email notifications
