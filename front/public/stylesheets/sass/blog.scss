@@ -20,8 +20,6 @@ footer {
 }
 
 #author-column {
-  background-color: #11161c;
-
   h1 {
     color: white;
     text-align: center;
@@ -124,13 +122,7 @@ article {
       font-weight: bold;
 
       a.tag {
-        color: white;
-        text-decoration: none;
         display: block;
-
-        &:hover {
-          opacity: 0.5;
-        }
       }
     }
   }
@@ -150,6 +142,17 @@ article {
         }
       }
     }
+  }
+}
+
+a.tag {
+  color: white;
+  text-decoration: none;
+  display: inline;
+  margin-right: 5px;
+
+  &:hover {
+    opacity: 0.5;
   }
 }
 

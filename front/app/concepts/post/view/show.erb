@@ -1,7 +1,11 @@
 <article>
   <div class="row">
-    <div class="col-md-9 post-list-content">
+    <div class="col-md-12 post-list-content">
       <h2><%= title %></h2>
+      <p class="tags">
+        <%= post_date %>
+        <%= cell(Tag::Cell::Label, collection: tags).() %>
+      </p>
       <p><%= content %></p>
       <%= link_to t.general.back,  '/', class: 'btn btn-info pull-right'%>
 
@@ -21,12 +25,6 @@
       </script>
       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
-    </div>
-    <div class="col-md-3 post-list-info">
-      <div class="timeline"><%= post_date %></div>
-      <div class="tags">
-        <%= cell(Tag::Cell::Label, collection: tags).() %>
-      </div>
     </div>
   </div>
 </article>
