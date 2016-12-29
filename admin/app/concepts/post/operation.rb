@@ -42,6 +42,7 @@ class Post < Sequel::Model(DB)
       timestamp = Time.now
       model.created_at = timestamp
       model.updated_at = timestamp
+      model.activated_at = timestamp
     end
   end
 
@@ -50,6 +51,10 @@ class Post < Sequel::Model(DB)
 
     contract do
       property :id
+      property :activated_at
+      validation do
+        required(:activated_at).filled
+      end
     end
 
     def model!(params)

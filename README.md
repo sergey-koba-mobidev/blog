@@ -30,5 +30,4 @@ A Blog completely built without rails
 - add multilang
 - add sitemap.xml
 - subscribe for email notifications
-- add activated_at, and sort by it
 - backups

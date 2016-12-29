@@ -2,7 +2,7 @@ class Post < Sequel::Model(DB)
   class Cell
     class Base < BaseCell
       def post_date
-        l model.created_at, :human
+        l model.activated_at, :human
       end
 
       def tags
