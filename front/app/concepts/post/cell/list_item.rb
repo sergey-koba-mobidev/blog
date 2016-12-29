@@ -8,6 +8,7 @@ class Post < Sequel::Model(DB)
       property :seo_keywords
       property :created_at
       property :updated_at
+      property :activated_at
 
       def content
         model.content.split('---read-more---')[0]

@@ -6,6 +6,7 @@ class Post < Sequel::Model(DB)
       property :active
       property :created_at
       property :updated_at
+      property :activated_at
 
       def active_icon
         "<span class=\"fa #{model.active ? 'fa-check' : 'fa-times'}\"></span>"
