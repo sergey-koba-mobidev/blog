@@ -14,11 +14,10 @@ gem 'hanami-helpers'
 
 # Trailblazer
 gem 'dry-validation'
-gem 'trailblazer'
+gem 'trailblazer', '~> 2.0'
 gem 'trailblazer-loader'
 gem 'trailblazer-cells'
 gem 'cells-erb'
-gem 'formular'
 gem 'will_paginate'
 
 # Web server
