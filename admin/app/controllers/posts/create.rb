@@ -3,11 +3,13 @@ module App
     module Posts
       class Create < Posts::Base
         def call(params)
-          run Post::Create, params: params.env['rack.request.form_hash'] do |op|
-            add_flash_message 'Created a Post.', 'success'
+          result = Post::Create.(params.env['rack.request.form_hash'])
+          if result.success?
+            add_flash_message "Created a Post: #{result['model'].title}", 'success'
             redirect_to '/'
+          else
+            render_layout Post::Cell::New.(result['contract.default'])
           end
-          render_layout Post::Cell::New.(@form)
         end
       end
     end

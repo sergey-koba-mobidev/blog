@@ -3,11 +3,13 @@ module App
     module Sessions
       class Create < BaseAction
         def call(params)
-          run User::FindForAuth, params: params.env['rack.request.form_hash'] do |op|
-            session[:user] = {id: op.model.id, hash: op.model.password[0..30]}
+          result = User::FindForAuth.(params.env['rack.request.form_hash'])
+          if result.success?
+            session[:user] = {id: result['model'].id, hash: result['model'].password[0..30]}
             redirect_to '/'
+          else
+            render_layout User::Cell::Login.(result['contract.default'])
           end
-          render_layout User::Cell::Login.(@form)
         end
       end
     end

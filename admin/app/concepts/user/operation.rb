@@ -1,7 +1,13 @@
 class User < Sequel::Model(DB)
   class Create < Trailblazer::Operation
-    include Model
-    model User, :create
+    extend Contract::DSL
+
+    step Model(User, :new)
+    step Contract::Build()
+    step Contract::Validate()
+    step :hash_password
+    step :set_timestamps
+    step Contract::Persist()
 
     contract do
       property :username
@@ -15,17 +21,11 @@ class User < Sequel::Model(DB)
       end
     end
 
-    def process(params)
-      validate(params) do
-        contract.password = BCrypt::Password.create(params[:password])
-        set_timestamps
-        contract.save
-      end
+    def hash_password(options, params:, model:, **)
+      model.password = BCrypt::Password.create(params[:password])
     end
 
-    private
-
-    def set_timestamps
+    def set_timestamps(options, model:, **)
       timestamp = Time.now
       model.created_at = timestamp
       model.updated_at = timestamp
@@ -33,6 +33,12 @@ class User < Sequel::Model(DB)
   end
 
   class FindForAuth < Trailblazer::Operation
+    extend Contract::DSL
+
+    step Contract::Build()
+    step Contract::Validate()
+    step :model!
+
     contract do
       property :login, virtual: true
       property :password, virtual: true
@@ -54,10 +60,8 @@ class User < Sequel::Model(DB)
       end
     end
 
-    def process(params)
-      validate(params) do
-        @model = User.where(username: params['login']).or(email: params['login']).first
-      end
+    def model!(options, params:, **)
+      options['model'] = User.where(username: params['login']).or(email: params['login']).first
     end
   end
 end

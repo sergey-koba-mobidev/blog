@@ -1,8 +1,6 @@
 module App
   module Controllers
     class BaseAction
-      include Trailblazer::Operation::Controller
-
       def self.inherited(child_class)
         child_class.include Hanami::Action
         child_class.include Hanami::Action::Session

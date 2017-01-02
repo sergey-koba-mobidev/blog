@@ -1,7 +1,12 @@
 class Post < Sequel::Model(DB)
   class Create < Trailblazer::Operation
-    include Model
-    model Post, :create
+    extend Contract::DSL
+
+    step Model(Post, :new)
+    step Contract::Build()
+    step Contract::Validate()
+    step :set_timestamps
+    step Contract::Persist()
 
     contract do
       property :title
@@ -11,6 +16,7 @@ class Post < Sequel::Model(DB)
       property :seo_keywords
       property :tags
       property :active
+      property :activated_at
 
       validation do
         configure do
@@ -29,63 +35,60 @@ class Post < Sequel::Model(DB)
       end
     end
 
-    def process(params)
-      validate(params) do
-        set_timestamps
-        contract.save
-      end
-    end
-
-    private
-
-    def set_timestamps
+    def set_timestamps(options, model:, **)
       timestamp = Time.now
+      options['contract.default'].activated_at = timestamp if options['contract.default'].activated_at == ''
       model.created_at = timestamp
       model.updated_at = timestamp
-      model.activated_at = timestamp
     end
   end
 
   class Update < Create
-    model Post, :update
+    step :model!
+    step Contract::Build()
+    step Contract::Validate()
+    step :set_timestamps
+    step Contract::Persist()
 
     contract do
       property :id
       property :activated_at
+
       validation do
         required(:activated_at).filled
       end
     end
 
-    def model!(params)
-      Post[params[:id]]
+    def model!(options)
+      options['model'] = Post[options[:id]]
     end
 
-
-    private
-
-    def set_timestamps
+    def set_timestamps(options, model:, **)
       model.updated_at = Time.now
     end
   end
 
   class Destroy < Trailblazer::Operation
-    def process(params)
+    step :process
+
+    def process(options, params:)
       Post[params[:id]].destroy
     end
   end
 
   class PagedList < Trailblazer::Operation
-    PER_PAGE = 5
+    PER_PAGE = 10
 
-    def setup!(params)
+    step :setup!
+    step :get_posts!
+
+    def setup!(options, params:)
       params[:page] = 1 if params[:page].nil?
       params[:page] = params[:page].to_i
-      super
     end
 
-    def process(params)
-      @model = Post.dataset.paginate(params[:page], PER_PAGE)
+    def get_posts!(options, params:)
+      options['result.posts'] = Post.dataset.order(:activated_at).reverse.paginate(params[:page], PER_PAGE)
     end
   end
 end

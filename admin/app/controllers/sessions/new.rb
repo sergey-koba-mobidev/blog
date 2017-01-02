@@ -3,8 +3,7 @@ module App
     module Sessions
       class New < BaseAction
         def call(params)
-          form User::FindForAuth
-          render_layout User::Cell::Login.(@form)
+          render_layout User::Cell::Login.(User::FindForAuth['contract.default'])
         end
       end
     end
