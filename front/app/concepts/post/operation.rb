@@ -3,7 +3,7 @@ class Post < Sequel::Model(DB)
     PER_PAGE = 5
 
     step :setup!
-    step :get_posts!
+    step :get_posts!, name: 'posts.get'
 
     def setup!(options, params:, **)
       params[:page] = 1 if params[:page].nil?

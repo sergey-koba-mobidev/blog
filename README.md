@@ -30,4 +30,3 @@ A Blog completely built without rails
 - add multilang
 - add sitemap.xml
 - subscribe for email notifications
-- backups

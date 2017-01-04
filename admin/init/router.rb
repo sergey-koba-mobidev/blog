@@ -16,6 +16,9 @@ class Router
       get '/login', to: 'sessions#new', as: :login
       post '/login', to: 'sessions#create'
       get '/logout', to: 'sessions#destroy', as: :logout
+
+      get '/backup', to: 'backup#show', as: :backup
+      get '/download_backup', to: 'backup#download', as: :download_backup
     end
     @@router
   end

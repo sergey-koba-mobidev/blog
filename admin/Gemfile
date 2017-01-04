@@ -21,6 +21,10 @@ gem 'cells-erb'
 gem 'formular', github: 'trailblazer/formular'
 gem 'will_paginate'
 
+# Representer
+gem 'multi_json'
+gem 'roar', github: 'trailblazer/roar'
+
 # Authentication
 gem 'bcrypt'
 
