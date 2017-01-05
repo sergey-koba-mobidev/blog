@@ -11,7 +11,10 @@ class Post < Sequel::Model(DB)
     end
 
     def get_posts!(options, params:, **)
-      options['result.posts'] = Post.dataset.where(active: true).order(:activated_at).reverse.paginate(params[:page], PER_PAGE)
+      options['result.posts'] = Post.dataset.where(active: true)
+                                    .where(lang: params[:lang])
+                                    .order(:activated_at).reverse
+                                    .paginate(params[:page], PER_PAGE)
     end
   end
 end

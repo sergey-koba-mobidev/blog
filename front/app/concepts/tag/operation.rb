@@ -6,7 +6,9 @@ class Tag
 
     def get_posts!(options, params:, **)
       options['result.posts'] = Post.dataset.where(active: true).where(Sequel.like(:tags, "%#{params[:tag]}%"))
-                   .order(:activated_at).reverse.paginate(params[:page], PER_PAGE)
+                                    .where(lang: params[:lang])
+                                    .order(:activated_at).reverse
+                                    .paginate(params[:page], PER_PAGE)
     end
   end
 end

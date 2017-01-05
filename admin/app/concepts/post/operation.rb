@@ -17,6 +17,7 @@ class Post < Sequel::Model(DB)
       property :tags
       property :active
       property :activated_at
+      property :lang
 
       validation do
         configure do
@@ -32,6 +33,7 @@ class Post < Sequel::Model(DB)
         required(:content).filled
         required(:slug).filled
         required(:slug).filled(:unique?)
+        required(:lang).filled
       end
     end
 

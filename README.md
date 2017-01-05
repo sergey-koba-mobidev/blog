@@ -27,6 +27,5 @@ A Blog completely built without rails
 ## TODO:
 - Tests
 - automate deploys
-- add multilang
 - add sitemap.xml
 - subscribe for email notifications

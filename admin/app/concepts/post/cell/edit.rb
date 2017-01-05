@@ -1,8 +1,8 @@
+require_relative 'new'
+
 class Post < Sequel::Model(DB)
   class Cell
-    class Edit < BaseCell
-      include Formular::Helper
-
+    class Edit < New
       def form_path
         Router.path(:update_post, id: model.id)
       end

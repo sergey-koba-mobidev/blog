@@ -14,6 +14,10 @@ class Post < Sequel::Model(DB)
       def preview_link
         ''
       end
+
+      def langs_array
+        [['English', 'en'], ['Russian', 'ru']]
+      end
     end
   end
 end

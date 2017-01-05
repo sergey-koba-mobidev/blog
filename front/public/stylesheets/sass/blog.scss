@@ -55,6 +55,28 @@ footer {
     }
   }
 
+  .lang-links {
+    text-align: center;
+
+    a {
+      margin-left: 5px;
+      margin-right: 5px;
+      font-size: 18px;
+      color: white;
+      text-decoration: none;
+      opacity: 0.8;
+
+      &.active {
+        opacity: 1;
+        font-weight: bold;
+      }
+
+      &:hover {
+        color: #ccc;
+      }
+    }
+  }
+
   .about-author {
     color: #6a6a6a;
     font-weight: bold;

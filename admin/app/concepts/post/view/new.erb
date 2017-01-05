@@ -15,6 +15,7 @@
   <div class="col-sm-6">
     <%= f.input :title, label: 'Title' %>
     <%= f.input :slug, label: 'Slug' %>
+    <%= f.select :lang, label: 'Language', collection: langs_array %>
     <%= f.input :tags, label: 'Tags' %>
   </div>
   <div class="col-sm-6">
@@ -23,6 +24,7 @@
     <%= f.input :activated_at, label: 'Activation Date' %>
   </div>
 </div>
+
 <%= f.error :content %>
 <%= f.hidden :content, value: '' %>
 <div class="editable"><%= model.content %></div>

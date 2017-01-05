@@ -10,6 +10,7 @@ class Router
       get '/article/:slug', to: 'posts#show', as: :show_post
       get '/tag/:tag', to: 'tags#show', as: :show_tag
       get '/tag/:tag/page/:page', to: 'tags#show'
+      get '/lang/:lang', to: 'lang#set', as: :set_lang
     end
     @@router
   end

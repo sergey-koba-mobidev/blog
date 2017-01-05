@@ -17,6 +17,7 @@ class Post < Sequel::Model(DB)
       property :created_at
       property :updated_at
       property :activated_at
+      property :lang
     end
   end
 end
