@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
-require "thor"
-require "logger"
+require 'thor'
+require 'logger'
 require './loaders'
 
 def use(*)
@@ -20,7 +20,7 @@ class MyCLI < Thor
         puts "Migrating to version #{version}"
         Sequel::Migrator.run(DB, File.join(File.dirname(__FILE__), 'migrations'), target: version.to_i)
     else
-        puts "Migrating to latest"
+        puts 'Migrating to latest'
         Sequel::Migrator.run(DB, File.join(File.dirname(__FILE__), 'migrations'))
     end
   end

@@ -9,3 +9,5 @@ docker push sergkoba/blog:latest-admin
 
 cd ..
 rancher up -d -u -c -p
+
+rancher exec admin bundle exec ./cli db_migrate

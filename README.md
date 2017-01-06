@@ -15,14 +15,14 @@ A Blog completely built without rails
 - run `dcg run admin rack-console`
 
 ## Routes
-- all routes `dcg run admin ./cli routes`, see [Hanami routes](https://github.com/hanami/router)
+- all routes `dcg run admin bundle exec ./cli routes`, see [Hanami routes](https://github.com/hanami/router)
 
 ## DB Migrations
-- migrate to `dcg run admin ./cli db_migrate [VERSION]`, see: [Sequel migrations](http://sequel.jeremyevans.net/rdoc/files/doc/migration_rdoc.html)
-- rollback to - just run `dcg run admin ./cli db_migrate [VERSION]` with VERSION you want to rollback to 
+- migrate to `dcg run admin bundle exec ./cli db_migrate [VERSION]`, see: [Sequel migrations](http://sequel.jeremyevans.net/rdoc/files/doc/migration_rdoc.html)
+- rollback to - just run `dcg run admin bundle exec ./cli db_migrate [VERSION]` with VERSION you want to rollback to 
 
 ## Cli
-- see commands list `dcg run admin ./cli help`
+- see commands list `dcg run admin bundle exec ./cli help`
 
 ## TODO:
 - Tests
