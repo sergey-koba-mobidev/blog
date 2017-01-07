@@ -35,6 +35,8 @@ services:
     command:  rackup --port 3001 --host 0.0.0.0
     links:
       - db
+    volumes:
+      - /app/public/sitemaps
     environment:
       RACK_ENV: production
       VIRTUAL_HOST: 1devblog.org

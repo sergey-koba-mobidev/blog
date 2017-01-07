@@ -1,4 +1,5 @@
 SitemapGenerator::Sitemap.default_host = 'http://1devblog.org'
+SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
