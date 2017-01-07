@@ -28,5 +28,4 @@ A Blog completely built without rails
 - Tests
 - automate deploys
 - add regular tasks
-- fix bug post update returns failure, but saves the post
 - subscribe for email notifications

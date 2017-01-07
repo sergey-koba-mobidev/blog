@@ -25,7 +25,7 @@ class Post < Sequel::Model(DB)
           option :form
 
           def unique?(value)
-            Post.exclude(id: form.model.id).where(slug: value).first.nil?
+            Post.exclude(id: form.model.id).where(slug: value).where(lang: form.lang).first.nil?
           end
         end
 
@@ -46,7 +46,7 @@ class Post < Sequel::Model(DB)
   end
 
   class Update < Create
-    step :model!
+    step Model( Post, :find_by )
     step Contract::Build()
     step Contract::Validate()
     step :set_timestamps
@@ -59,10 +59,6 @@ class Post < Sequel::Model(DB)
       validation do
         required(:activated_at).filled
       end
-    end
-
-    def model!(options)
-      options['model'] = Post[options[:id]]
     end
 
     def set_timestamps(options, model:, **)

@@ -3,7 +3,7 @@ module App
     module Posts
       class Show < BaseAction
         def call(params)
-          post = Post.find(slug: params[:slug])
+          post = Post.find(slug: params[:slug], lang: R18n.get.locale.code)
           render_layout Post::Cell::Show.new(post, host: params.env['HTTP_HOST']),
               seo_title: post.title,
               seo_description: post.seo_description,
