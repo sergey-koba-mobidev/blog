@@ -11,7 +11,7 @@ module App
       protected
 
       def set_lang
-        R18n.set(session[:lang]) unless session[:lang].nil?
+        R18n.set(params[:lang] || DEFAULT_LANG)
       end
 
       def render_layout(content = '', options = {})

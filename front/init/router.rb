@@ -5,18 +5,27 @@ class Router
 
   def self.app
     @@router = Hanami::Router.new(namespace: App::Controllers) do
-      get '/', to: 'posts#index'
-      get '/page/:page', to: 'posts#index'
-      get '/article/:slug', to: 'posts#show', as: :show_post
-      get '/tag/:tag', to: 'tags#show', as: :show_tag
-      get '/tag/:tag/page/:page', to: 'tags#show'
-      get '/lang/:lang', to: 'lang#set', as: :set_lang
+      get '(/:lang)/', lang: /en/, to: 'posts#index', as: :root
+      get '(/:lang)/page/:page', lang: /en/, to: 'posts#index'
+      get '(/:lang)/article/:slug', lang: /en/, to: 'posts#show', as: :show_post
+      get '(/:lang)/tag/:tag', lang: /en/, to: 'tags#show', as: :show_tag
+      get '(/:lang)/tag/:tag/page/:page', lang: /en/, to: 'tags#show'
     end
     @@router
   end
 
-  def self.path(*p)
-    @@router.path(*p)
+  def self.path(route, *args)
+    # Add selected lang to route
+    if R18n.get && R18n.get.locale.code != DEFAULT_LANG
+      if args[0].nil?
+        args[0] = {lang: R18n.get.locale.code}
+      else
+        args[0].merge!(lang: R18n.get.locale.code)
+      end
+    end
+
+    self.app if @@router.nil?
+    @@router.path(route, *args)
   end
 
   def self.print_routes

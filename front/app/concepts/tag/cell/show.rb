@@ -10,7 +10,7 @@ class Tag
       end
 
       def pagination_base_url
-        "/tag/#{tag}"
+        "#{lang_base_url}/tag/#{tag}"
       end
     end
   end

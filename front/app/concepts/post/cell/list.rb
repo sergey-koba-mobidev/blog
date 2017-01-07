@@ -4,6 +4,10 @@ class Post < Sequel::Model(DB)
       def posts
         @options[:collection]
       end
+
+      def pagination_base_url
+        "#{lang_base_url}"
+      end
     end
   end
 end

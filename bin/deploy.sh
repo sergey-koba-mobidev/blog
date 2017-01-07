@@ -11,3 +11,4 @@ cd ..
 rancher up -d -u -c -p
 
 rancher exec admin bundle exec ./cli db_migrate
+rancher exec front bundle exec ./cli sitemap_generate

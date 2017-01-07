@@ -32,6 +32,9 @@ gem 'sass'
 # Translation
 gem 'r18n-core'
 
+# Sitemap
+gem 'sitemap_generator'
+
 group :development do
   # Rerun web server when code changes (see docker-compose.dev.yml)
   gem 'rerun'

@@ -38,7 +38,7 @@
       <%= yield %>
     </div>
     <div class="col-md-3" id="author-column">
-      <h1><a href="/">One Dev Blog</a></h1>
+      <h1><%= link_to 'One Dev Blog', Router.path(:root) %></h1>
       <div class="lang-links">
         <%= lang_link 'en' %>
         <%= lang_link 'ru' %>

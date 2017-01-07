@@ -6,3 +6,4 @@ front/public/bower_components
 front/public/stylesheets/*.css
 front/public/stylesheets/*.css.map
 .sass-cache
+sitemap.xml.gz

@@ -27,5 +27,6 @@ A Blog completely built without rails
 ## TODO:
 - Tests
 - automate deploys
-- add sitemap.xml
+- add regular tasks
+- fix bug post update returns failure, but saves the post
 - subscribe for email notifications

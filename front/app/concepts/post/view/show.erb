@@ -7,7 +7,7 @@
         <%= cell(Tag::Cell::Label, collection: tags).() %>
       </p>
       <p><%= content %></p>
-      <%= link_to t.general.back,  '/', class: 'btn btn-info pull-right'%>
+      <%= link_to t.general.back,  Router.path(:root), class: 'btn btn-info pull-right'%>
 
       <div id="disqus_thread"></div>
       <script>

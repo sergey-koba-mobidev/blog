@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
-require "thor"
-require "logger"
+require 'thor'
+require 'logger'
 require './loaders'
+require 'sitemap_generator'
 
 def use(*)
 end
@@ -11,6 +12,11 @@ class MyCLI < Thor
   desc 'routes', 'List all app routes'
   def routes
     Router.print_routes
+  end
+
+  desc 'sitemap_generate', 'Generate public/sitemap.xml.gz file'
+  def sitemap_generate
+    SitemapGenerator::Interpreter.run(config_file: 'config/sitemap.rb', verbose: true)
   end
 end
 

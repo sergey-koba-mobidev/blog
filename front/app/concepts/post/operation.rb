@@ -1,6 +1,6 @@
 class Post < Sequel::Model(DB)
   class PagedList < Trailblazer::Operation
-    PER_PAGE = 5
+    PER_PAGE = 3
 
     step :setup!
     step :get_posts!, name: 'posts.get'
@@ -15,6 +15,15 @@ class Post < Sequel::Model(DB)
                                     .where(lang: params[:lang])
                                     .order(:activated_at).reverse
                                     .paginate(params[:page], PER_PAGE)
+    end
+  end
+
+  class Sitemap < Trailblazer::Operation
+    step :get_posts!
+
+    def get_posts!(options, params:, **)
+      options['result.posts'] = Post.dataset.where(active: true)
+                                    .order(:activated_at).reverse
     end
   end
 end
