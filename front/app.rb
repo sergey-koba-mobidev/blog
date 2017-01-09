@@ -2,6 +2,7 @@ require 'ostruct'
 require 'hanami/controller'
 require 'hanami/action/session'
 require 'hanami/helpers'
+require 'sitemap_generator'
 require './init/router'
 
 require_dir 'lib'

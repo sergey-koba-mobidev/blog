@@ -69,6 +69,8 @@ GEM
     erbse (0.1.1)
       temple
     erubis (2.7.0)
+    faraday (0.10.1)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.14)
     hanami-controller (0.8.1)
       hanami-utils (~> 0.9)
@@ -90,6 +92,7 @@ GEM
       ruby_dep (~> 1.2)
     method_source (0.8.2)
     multi_json (1.12.1)
+    multipart-post (2.0.0)
     pg (0.19.0)
     pipetree (0.0.5)
       uber
@@ -148,6 +151,7 @@ DEPENDENCIES
   binding_of_caller
   cells-erb
   dry-validation
+  faraday
   formular!
   hanami-controller
   hanami-helpers

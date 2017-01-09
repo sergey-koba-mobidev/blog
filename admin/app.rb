@@ -1,5 +1,6 @@
 require 'bcrypt'
 require 'ostruct'
+require 'faraday'
 require 'hanami/controller'
 require 'hanami/action/session'
 require 'hanami/helpers'

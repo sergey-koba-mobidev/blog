@@ -2,7 +2,6 @@
 require 'thor'
 require 'logger'
 require './loaders'
-require 'sitemap_generator'
 
 def use(*)
 end
@@ -16,7 +15,7 @@ class MyCLI < Thor
 
   desc 'sitemap_generate', 'Generate public/sitemap.xml.gz file'
   def sitemap_generate
-    SitemapGenerator::Interpreter.run(config_file: 'config/sitemap.rb', verbose: true)
+    Sitemap::Generate.()
   end
 end
 

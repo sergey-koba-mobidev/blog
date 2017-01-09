@@ -28,6 +28,9 @@ gem 'roar', github: 'trailblazer/roar'
 # Authentication
 gem 'bcrypt'
 
+# Http requests
+gem 'faraday'
+
 # Web server
 gem 'puma'
 

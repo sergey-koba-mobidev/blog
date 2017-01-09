@@ -10,6 +10,10 @@ class Router
       get '(/:lang)/article/:slug', lang: /en/, to: 'posts#show', as: :show_post
       get '(/:lang)/tag/:tag', lang: /en/, to: 'tags#show', as: :show_tag
       get '(/:lang)/tag/:tag/page/:page', lang: /en/, to: 'tags#show'
+
+      namespace 'api' do
+        get '/sitemap/generate', to: Api::Controllers::Sitemap::Generate
+      end
     end
     @@router
   end

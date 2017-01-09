@@ -20,6 +20,8 @@ services:
       - ./admin:/app
     volumes_from:
       - admin-bundler-cache
+    links:
+      - front
     ports:
       - "3000:3000"
     environment:
