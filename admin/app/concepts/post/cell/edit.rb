@@ -12,7 +12,11 @@ class Post < Sequel::Model(DB)
       end
 
       def preview_link
-        link_to raw('<i class="fa fa-eye"></i> Preview'), Constants::frontend_article_url + model.slug, class: 'btn', target: '_blank'
+        link_to 'Preview', Constants::frontend_article_url + model.slug, class: 'btn btn-info btn-sm', target: '_blank'
+      end
+
+      def clone_link
+        link_to 'Clone', Router.path(:clone_post, id: model.id), class: 'btn btn-warning btn-sm', stlye: 'margin-right: 5px;'
       end
 
       def show

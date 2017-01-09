@@ -12,6 +12,7 @@ class Router
       post '/posts/:id', to: 'posts#update', as: :update_post
       get '/posts/:id/destroy/', to: 'posts#destroy', as: :destroy_post
       get '/posts/new', to: 'posts#new', as: :new_post
+      get '/posts/:id/clone', to: 'posts#clone', as: :clone_post
 
       get '/login', to: 'sessions#new', as: :login
       post '/login', to: 'sessions#create'

@@ -28,4 +28,5 @@ A Blog completely built without rails
 - Tests
 - automate deploys
 - add regular tasks
+- generate sitemap from admin panel
 - subscribe for email notifications

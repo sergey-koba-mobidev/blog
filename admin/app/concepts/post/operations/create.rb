@@ -44,49 +44,4 @@ class Post < Sequel::Model(DB)
       model.updated_at = timestamp
     end
   end
-
-  class Update < Create
-    step Model( Post, :find_by )
-    step Contract::Build()
-    step Contract::Validate()
-    step :set_timestamps
-    step Contract::Persist()
-
-    contract do
-      property :id
-      property :activated_at
-
-      validation do
-        required(:activated_at).filled
-      end
-    end
-
-    def set_timestamps(options, model:, **)
-      model.updated_at = Time.now
-    end
-  end
-
-  class Destroy < Trailblazer::Operation
-    step :process
-
-    def process(options, params:)
-      Post[params[:id]].destroy
-    end
-  end
-
-  class PagedList < Trailblazer::Operation
-    PER_PAGE = 10
-
-    step :setup!
-    step :get_posts!
-
-    def setup!(options, params:)
-      params[:page] = 1 if params[:page].nil?
-      params[:page] = params[:page].to_i
-    end
-
-    def get_posts!(options, params:)
-      options['result.posts'] = Post.dataset.order(:activated_at).reverse.paginate(params[:page], PER_PAGE)
-    end
-  end
 end

@@ -1,15 +1,19 @@
 <div class="row">
   <div class="col-lg-12">
     <h1 class="page-header">
-      <%= form_action_title %> Post
-      <a href="#" onclick="window.scrollTo(0,document.body.scrollHeight); return false;"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
-      <%= preview_link %>
+      <%= form_action_title %> Post <%= model.id ? "##{model.id}" : '' %>
     </h1>
   </div>
 </div>
 
 <% f = form(model, form_path, builder: :bootstrap3, id: 'post-form') %>
 <%= f.start %>
+<p>
+  <%= f.submit value: 'Save', class: %w(btn btn-sm btn-success) %>
+  <a href="#" onclick="window.scrollTo(0,document.body.scrollHeight); return false;" class="btn btn-default btn-sm">Scroll</a>
+  <%= clone_link %>
+  <%= ' ' + preview_link.to_s %>
+</p>
 <%= f.error_notification %>
 <div class="row">
   <div class="col-sm-6">

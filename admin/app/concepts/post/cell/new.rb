@@ -15,6 +15,10 @@ class Post < Sequel::Model(DB)
         ''
       end
 
+      def clone_link
+        ''
+      end
+
       def langs_array
         [['English', 'en'], ['Russian', 'ru']]
       end
