@@ -1,7 +1,7 @@
 module Constants
-  def self.frontend_article_url
-    return 'http://1devblog.org/article/' if ENV['RACK_ENV'] == 'production'
-    return 'http://localhost:3001/article/'
+  def self.frontend_url
+    return 'http://1devblog.org' if ENV['RACK_ENV'] == 'production'
+    return 'http://localhost:3001'
   end
 
   def self.frontend_api_url
@@ -12,5 +12,9 @@ module Constants
   def self.api_token
     return ENV['API_TOKEN'] if ENV['RACK_ENV'] == 'production'
     return 'development_token'
+  end
+
+  def self.default_lang
+    'ru'
   end
 end

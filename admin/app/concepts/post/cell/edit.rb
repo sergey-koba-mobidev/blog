@@ -12,7 +12,9 @@ class Post < Sequel::Model(DB)
       end
 
       def preview_link
-        link_to 'Preview', Constants::frontend_article_url + model.slug, class: 'btn btn-info btn-sm', target: '_blank'
+        link_to 'Preview',
+                Constants::frontend_url + "#{model.lang != Constants::default_lang ? "/#{model.lang}" : ''}/article/" + model.slug, class: 'btn btn-info btn-sm',
+                target: '_blank'
       end
 
       def clone_link
