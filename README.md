@@ -1,7 +1,12 @@
 # One developer blog
 
-A Blog completely built without rails
+This is a small personal blog web application, built using Rack and standalone gems.
+The idea is to show how a completely feature full MVC application can be created without using any framework. 
+The blog is divided into 2 separate applications: `front` and `admin`.
+Also it uses Docker both for local development and production ([using Rancher](http://1devblog.org/en/article/docker-in-production-using-rancher)).
+You can find a working demo here: [http://1devblog.org/en](http://1devblog.org/en)
 
+## Installation
 - install Docker and DockerCompose
 - create alias in .bashrc `alias dcg="docker-compose -f docker-compose.yml -f docker-compose.dev.yml"`
 - run in root `dcg build`, then `./bin/setup.sh`
@@ -9,22 +14,24 @@ A Blog completely built without rails
 - run app `dcg up -d`
 - go to [http://localhost:3001](http://localhost:3001) for Front and [http://localhost:3000](http://localhost:3000) for Admin 
 - stop app `dcg stop`
-- restart admin app `dcg restart admin`. In develop app is auto-restarted on any code change via `rerun` gem
+- restart admin app `dcg restart admin`. In local env apps are auto-restarted on any code change via `rerun` gem
 
-## Console
+## Interactive Console
 - run `dcg run admin rack-console`
 
 ## Routes
-- all routes `dcg run admin bundle exec ./cli routes`, see [Hanami routes](https://github.com/hanami/router)
+- print all routes `dcg run admin bundle exec ./cli routes`, see [Hanami routes](https://github.com/hanami/router)
+- edit application routes in `init/router.rb`
 
 ## DB Migrations
 - migrate to `dcg run admin bundle exec ./cli db_migrate [VERSION]`, see: [Sequel migrations](http://sequel.jeremyevans.net/rdoc/files/doc/migration_rdoc.html)
-- rollback to - just run `dcg run admin bundle exec ./cli db_migrate [VERSION]` with VERSION you want to rollback to 
+- rollback to - just run `dcg run admin bundle exec ./cli db_migrate [VERSION]` with VERSION you want to rollback to
+- edit db credentials in `config/database.yml`
 
-## Cli
+## Cli (rake analogue)
 - see commands list `dcg run admin bundle exec ./cli help`
 
-## TODO:
+## TODO features:
 - Tests
 - automate deploys
 - subscribe for email notifications
