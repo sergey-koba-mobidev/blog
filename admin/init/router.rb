@@ -19,7 +19,8 @@ class Router
       get '/logout', to: 'sessions#destroy', as: :logout
 
       get '/backup', to: 'backup#show', as: :backup
-      get '/bcckup/download', to: 'backup#download', as: :download_backup
+      get '/backup/download', to: 'backup#download', as: :download_backup
+      post '/backup/restore', to: 'backup#restore', as: :restore_backup
       get '/sitemap', to: 'sitemap#show', as: :sitemap
       get '/sitemap/generate', to: 'sitemap#generate', as: :generate_sitemap
     end

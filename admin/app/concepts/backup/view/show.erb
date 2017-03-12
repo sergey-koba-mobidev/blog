@@ -27,3 +27,15 @@
     </div>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">Restore</h1>
+  </div>
+</div>
+<% f = form(nil, Router.path(:restore_backup), builder: :bootstrap3) %>
+<%= f.start %>
+<%= f.error_notification %>
+<%= f.textarea :data, label: 'Data', placeholder: 'Paste json from backup here', rows: 10 %>
+<%= f.submit value: 'Restore', class: %w(btn-lg btn-success btn-block) %>
+<%= f.end %>

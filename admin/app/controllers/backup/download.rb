@@ -12,9 +12,13 @@ module App
           self.format = :json
           self.headers.merge!({ 'Content-Disposition' => "attachment; filename=1devblog-#{Time.now.strftime("%Y-%m-%d-%H-%M")}.backup.json" })
           self.body = Enumerator.new do |yielder|
-            Post.all.each do |post|
-              yielder << Post::Representer::Backup.new(post).to_json + "\n"
+            yielder << "["
+            posts = Post.all
+            posts.each_with_index do |post, index|
+              yielder << Post::Representer::Backup.new(post).to_json
+              yielder << ",\n" unless index == posts.size - 1
             end
+            yielder << "]"
           end
         end
       end

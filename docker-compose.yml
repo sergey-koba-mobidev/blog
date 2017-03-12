@@ -6,11 +6,14 @@ services:
     labels:
       io.rancher.container.create_agent: 'true'
       io.rancher.container.agent.role: environmentAdmin
+      io.rancher.scheduler.affinity:host_label: blog=true
     image: rancher/lb-service-haproxy:v0.4.6
 
   db:
     restart: always
     image: postgres:latest
+    labels:
+      io.rancher.scheduler.affinity:host_label: blog=true
     volumes:
       - /var/lib/postgresql/data
     environment:
@@ -20,6 +23,7 @@ services:
   admin:
     labels:
       io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: blog=true
     image: sergkoba/blog:latest-admin
     command:  rackup --port 3000 --host 0.0.0.0
     links:
@@ -31,6 +35,7 @@ services:
   front:
     labels:
       io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: blog=true
     image: sergkoba/blog:latest
     command:  rackup --port 3001 --host 0.0.0.0
     links:

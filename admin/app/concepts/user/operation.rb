@@ -3,9 +3,9 @@ class User < Sequel::Model(DB)
     extend Contract::DSL
 
     step Model(User, :new)
+    step :hash_password
     step Contract::Build()
     step Contract::Validate()
-    step :hash_password
     step :set_timestamps
     step Contract::Persist()
 
@@ -22,7 +22,7 @@ class User < Sequel::Model(DB)
     end
 
     def hash_password(options, params:, model:, **)
-      model.password = BCrypt::Password.create(params[:password])
+      params[:password] = BCrypt::Password.create(params[:password])
     end
 
     def set_timestamps(options, model:, **)
