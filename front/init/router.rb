@@ -5,11 +5,11 @@ class Router
 
   def self.app
     @@router = Hanami::Router.new(namespace: App::Controllers) do
-      get '(/:lang)/', lang: /en/, to: 'posts#index', as: :root
-      get '(/:lang)/page/:page', lang: /en/, to: 'posts#index'
-      get '(/:lang)/article/:slug', lang: /en/, to: 'posts#show', as: :show_post
-      get '(/:lang)/tag/:tag', lang: /en/, to: 'tags#show', as: :show_tag
-      get '(/:lang)/tag/:tag/page/:page', lang: /en/, to: 'tags#show'
+      get '(/:lang)/', lang: /ru/, to: 'posts#index', as: :root
+      get '(/:lang)/page/:page', lang: /ru/, to: 'posts#index'
+      get '(/:lang)/article/:slug', lang: /ru/, to: 'posts#show', as: :show_post
+      get '(/:lang)/tag/:tag', lang: /ru/, to: 'tags#show', as: :show_tag
+      get '(/:lang)/tag/:tag/page/:page', lang: /ru/, to: 'tags#show'
 
       namespace 'api' do
         get '/sitemap/generate', to: Api::Controllers::Sitemap::Generate
