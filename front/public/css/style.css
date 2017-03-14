@@ -131,6 +131,14 @@ a:hover {
     font-size: 40px;
 }
 
+.b-blog-list-item__title a {
+    color: #242933;
+}
+
+.b-blog-list-item__title a:hover {
+    color: #1081de;
+}
+
 .b-blog-list-item__date {
     margin-bottom: 35px;
     font-size: 14px;

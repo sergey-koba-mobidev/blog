@@ -1,5 +1,5 @@
 <article class="b-blog-list-item">
-  <h2 class="b-blog-list-item__title"><%= title %></h2>
+  <h2 class="b-blog-list-item__title"><a href="<%= Router.path(:show_post, slug: slug) %>"><%= title %></a></h2>
   <p class="b-blog-list-item__date"><%= post_date %></p>
   <div class="b-wiziwig">
     <%= content %>
