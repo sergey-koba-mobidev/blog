@@ -1,2 +1,4 @@
-<%= cell(Post::Cell::ListItem, collection: posts).() %>
-<%= will_paginate posts %>
+<div class="b-blog-list">
+  <%= cell(Post::Cell::ListItem, collection: posts).() %>
+  <%= will_paginate posts %>
+</div>

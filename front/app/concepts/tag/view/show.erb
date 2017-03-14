@@ -1,3 +1,4 @@
-<h2><%= t.tag.search %> <span class="label label-default"><%= tag %></span></h2>
-<%= cell(Post::Cell::ListItem, collection: posts).() %>
-<%= will_paginate posts %>
+<div class="b-blog-list">
+  <%= cell(Post::Cell::ListItem, collection: posts).() %>
+  <%= will_paginate posts %>
+</div>

@@ -7,8 +7,6 @@
   "version": "1.0.0",
   "license": "MIT",
   "dependencies": {
-    "bootstrap": "^3.3.7",
-    "font-awesome": "^4.6.3",
     "highlightjs": "^9.8.0"
   }
 }

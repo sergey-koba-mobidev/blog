@@ -9,18 +9,13 @@
   <meta name="description" content="<%= seo_description %>" />
   <meta name="keywords" content="<%= seo_keywords %>" />
 
-  <link href="/public/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/public/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link href="/public/bower_components/highlightjs/styles/darkula.css" rel="stylesheet" type="text/css">
-  <link href="/public/stylesheets/blog.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
 
-  <link rel="shortcut icon" href="/public/images/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
 
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
   <script src="/public/bower_components/jquery/dist/jquery.min.js"></script>
+  <script defer src="/js/mob-sidebar.js"></script>
 </head>
 <body>
 <script>
@@ -33,34 +28,134 @@
   ga('send', 'pageview');
 
 </script>
-<div class="container">
-  <div class="row" id="content-wrapper">
-    <div class="col-md-9" id="content-column">
-      <%= yield %>
+<div class="g-page">
+  <header class="b-header j-header">
+    <div class="b-header__container g-container g-clearfix">
+      <div class="b-hamburger j-sidebar-toggle">
+        <div class="b-hamburger__item">&nbsp;</div>
+      </div>
+      <div class="b-header__logo g-clearfix">
+        <h1><%= link_to '1devblog', Router.path(:root) %></h1>
+      </div>
+      <div class="b-header__links g-clearfix">
+        <a class="b-header__fork-me" href="https://github.com/sergey-koba-mobidev/blog" target="_blank" rel="noopener noreferrer">Fork me</a>
+        <ul class="b-languages-list">
+          <li class="b-languages-list__item">
+            <%= lang_link 'en' %>
+          </li>
+          <li class="b-languages-list__item">
+            <%= lang_link 'ru' %>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="col-md-3" id="author-column">
-      <h1><%= link_to 'One Dev Blog', Router.path(:root) %></h1>
-      <div class="lang-links">
-        <%= lang_link 'en' %>
-        <%= lang_link 'ru' %>
-      </div>
-      <div class="avatar"><img src="https://s.gravatar.com/avatar/b7e4c4440248d7e0229484b7de2dd96a?s=170"></div>
-      <div class="social-links">
-        <a href="https://github.com/sergey-koba-mobidev" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-        <a href="https://www.linkedin.com/in/serhii-koba" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-        <a href="https://twitter.com/KobaSerhii" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-      </div>
-      <div class="about-author">
-        <%= t.author.about %>
+    <!--sidebar mobile-->
+    <div class="b-overlay j-overlay">&nbsp;</div>
+    <noindex>
+    <div class="b-blog-author m-blog-author_mob j-mob-sidebar">
+      <div class="b-blog-author__container m-blog-author__container_mob">
+        <div class="b-blog-author__details m-blog-author__details_mob">
+          <img  class="b-blog-author__photo m-blog-author__photo_mob" src="https://s.gravatar.com/avatar/b7e4c4440248d7e0229484b7de2dd96a?s=170" width="132" height="132" alt="<%= t.author.full_name %>">
+          <h2 class="b-blog-author__name m-blog-author__name_mob"><%= t.author.full_name %></h2>
+          <div class="b-blog-author__profesion">
+            <p class="b-blog-author__paragraf"><%= t.author.skills %></p>
+          </div>
+          <ul class="b-social-list m-social-list_mob g-clearfix">
+            <li class="b-social-list__item">
+              <a class="b-social-list__link m-social-list__link_gh" href="https://github.com/sergey-koba-mobidev" target="_blank" rel="noopener noreferrer">
+                Fork me
+              </a>
+            </li>
+            <li class="b-social-list__item">
+              <a class="b-social-list__link m-social-list__link_in" href="https://www.linkedin.com/in/serhii-koba" target="_blank" rel="noopener noreferrer">
+                Linkedin
+              </a>
+            </li>
+            <li class="b-social-list__item">
+              <a class="b-social-list__link m-social-list__link_tw" href="https://twitter.com/KobaSerhii" target="_blank" rel="noopener noreferrer">
+                Twitter
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="b-blog-author__goal m-blog-author__goal_mob">
+          <p class="b-blog-author__description"><%= t.author.about %></p>
+        </div>
+        <div class="b-blog-author__fork-me">
+          <a class="b-blog-author__fork-me-link" href="https://github.com/sergey-koba-mobidev/blog" target="_blank" rel="noopener noreferrer">Fork me</a>
+        </div>
       </div>
     </div>
+    </noindex>
+    <!--sidebar mobile-->
+  </header>
+  <% unless tag.nil? %>
+    <div class="b-search-result">
+      <div class="b-search-result__container g-container"><%= tag %></div>
+    </div>
+  <% end %>
+  <div class="b-blog-content g-container g-clearfix">
+    <%= yield %>
+    <aside class="b-sidebar">
+      <div class="b-blog-author">
+        <div class="b-blog-author__details">
+          <img  class="b-blog-author__photo" src="https://s.gravatar.com/avatar/b7e4c4440248d7e0229484b7de2dd96a?s=170" width="140" height="140" alt="<%= t.author.full_name %>">
+          <h2 class="b-blog-author__name"><%= t.author.full_name %></h2>
+          <div class="b-blog-author__profesion">
+            <p class="b-blog-author__paragraf"><%= t.author.skills %></p>
+          </div>
+          <ul class="b-social-list g-clearfix">
+            <li class="b-social-list__item">
+              <a class="b-social-list__link m-social-list__link_gh" href="https://github.com/sergey-koba-mobidev" target="_blank" rel="noopener noreferrer">
+                Fork me
+              </a>
+            </li>
+            <li class="b-social-list__item">
+              <a class="b-social-list__link m-social-list__link_in" href="https://www.linkedin.com/in/serhii-koba" target="_blank" rel="noopener noreferrer">
+                Linkedin
+              </a>
+            </li>
+            <li class="b-social-list__item">
+              <a class="b-social-list__link m-social-list__link_tw" href="https://twitter.com/KobaSerhii" target="_blank" rel="noopener noreferrer">
+                Twitter
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="b-blog-author__goal">
+          <p class="b-blog-author__description"><%= t.author.about %></p>
+        </div>
+      </div>
+      <!--<div class="b-blog-posts">
+        <h2 class="b-blog-posts__heading"><%= t.post.posts %></h2>
+        <div class="b-blog-posts__post">
+          <h3 class="b-blog-posts__title"><a href="#">Docker in Production using Rancher</a></h3>
+          <p class="b-blog-posts__date">30 dec 2016</p>
+        </div>
+        <div class="b-blog-posts__post">
+          <h3 class="b-blog-posts__title"><a href="#">Docker for Rails</a></h3>
+          <p class="b-blog-posts__date">30 dec 2016</p>
+        </div>
+      </div>-->
+      <div class="b-tags-container">
+        <h2 class="b-tags-container__title"><%= t.tag.tags %></h2>
+        <ul class="b-tags-list g-clearfix">
+          <li class="b-tags-list__item"><a class="b-tags-list__link" href="/tag/docker">docker</a></li>
+          <li class="b-tags-list__item"><a class="b-tags-list__link" href="/tag/arduino">arduino</a></li>
+          <li class="b-tags-list__item"><a class="b-tags-list__link" href="/tag/rails">rails</a></li>
+          <li class="b-tags-list__item"><a class="b-tags-list__link" href="/tag/iot">iot</a></li>
+          <li class="b-tags-list__item"><a class="b-tags-list__link" href="/tag/rancher">rancher</a></li>
+        </ul>
+      </div>
+    </aside>
   </div>
+  <footer class="b-footer">
+    <div class="g-container g-clearfix b-footer__container">
+      <p class="b-footer__copyright">&copy; <%= t.author.full_name %></p>
+    </div>
+  </footer>
 </div>
-<footer class="container">
-  <h3 class="pull-left">&copy; <%= t.author.full_name %></h3>
-  <a href="https://github.com/sergey-koba-mobidev/blog" target="_blank" class="fork-link pull-right"><i class="fa fa-github" aria-hidden="true"></i> Fork me </a>
-</footer>
-<script src="/public/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
 <script src="/public/bower_components/highlightjs/highlight.pack.min.js"></script>
 <script src="/public/highlightjs/highlight.js"></script>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->

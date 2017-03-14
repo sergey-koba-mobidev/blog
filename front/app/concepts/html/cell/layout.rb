@@ -14,7 +14,12 @@ module Html
       end
 
       def lang_link(lang)
-        link_to lang, "#{DEFAULT_LANG == lang ? '/' : "/#{lang}"}", class: "#{R18n.get.locale.code == lang ? 'active' : ''}"
+        lang_label = lang == 'ru' ? 'Ru' : 'Eng'
+        link_to lang_label, "#{DEFAULT_LANG == lang ? '/' : "/#{lang}"}", class: "b-languages-list__link #{R18n.get.locale.code == lang ? 'active' : ''}"
+      end
+
+      def tag
+        options[:tag]
       end
 
       def show(&block)

@@ -3,7 +3,7 @@ module App
     module Tags
       class Show < BaseAction
         def call(params)
-          render_layout Tag::Cell::Show.new(params[:tag], collection: Tag::PagedList.(page: params[:page], tag: params[:tag], lang: R18n.get.locale.code)['result.posts'])
+          render_layout Tag::Cell::Show.new(params[:tag], collection: Tag::PagedList.(page: params[:page], lang: R18n.get.locale.code, tag: params[:tag])['result.posts']), tag: params[:tag]
         end
       end
     end

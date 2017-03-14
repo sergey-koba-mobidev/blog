@@ -21,11 +21,11 @@ module WillPaginate
 
     # For Boostrap
     def html_container(html)
-      tag :div, tag(:ul, html, :class => "pagination"), container_attributes
+      tag :div, tag(:ul, html, class: 'b-pagination-list g-clearfix'), container_attributes.merge!({class: 'b-pagination'})
     end
 
     def page_number(page)
-      tag :li, link(page, page, :rel => rel_value(page)), :class => ('active' if page == current_page)
+      tag :li, link(page, page, rel: rel_value(page), class: 'b-pagination-list__link'), class: "b-pagination-list__item #{('active' if page == current_page)}"
     end
 
     def gap
@@ -33,8 +33,8 @@ module WillPaginate
     end
 
     def previous_or_next_page(page, text, classname)
-      tag :li, link(text, page || '#'),
-          :class => [(classname[0..3] if  @options[:page_links]), (classname if @options[:page_links]), ('disabled' unless page)].join(' ')
+      tag :li, link(text, page || '', class: ['pagination-arrow-link', (classname[0..3] if  @options[:page_links]), (classname if @options[:page_links]), ('disabled' unless page)].join(' ')),
+          class: 'b-pagination-list__item'
     end
   end
 end

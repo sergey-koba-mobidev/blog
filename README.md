@@ -32,6 +32,7 @@ You can find a working demo here: [http://1devblog.org/en](http://1devblog.org/e
 - see commands list `dcg run admin bundle exec ./cli help`
 
 ## TODO features:
+- sidebar posts and tags
 - Tests
 - automate deploys
 - subscribe for email notifications

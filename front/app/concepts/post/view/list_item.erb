@@ -1,17 +1,11 @@
-<article>
-  <div class="row">
-    <div class="col-md-9 post-list-content">
-      <h2><a href="<%= Router.path(:show_post, slug: slug) %>"><%= title %></a></h2>
-      <p><%= content %></p>
-      <%= link_to t.post.read_more,  Router.path(:show_post, slug: slug), class: 'btn btn-success pull-right read-more'%>
-      <br />
-      <hr>
-    </div>
-    <div class="col-md-3 post-list-info">
-      <div class="timeline"><%= post_date %></div>
-      <div class="tags">
-        <%= cell(Tag::Cell::Label, collection: tags).() %>
-      </div>
-    </div>
+<article class="b-blog-list-item">
+  <h2 class="b-blog-list-item__title"><%= title %></h2>
+  <p class="b-blog-list-item__date"><%= post_date %></p>
+  <div class="b-wiziwig">
+    <%= content %>
   </div>
+  <ul class="b-tags-list g-clearfix">
+    <%= cell(Tag::Cell::Label, collection: tags).() %>
+  </ul>
+  <%= link_to t.post.read_more,  Router.path(:show_post, slug: slug), class: 'b-btn-read' %>
 </article>
