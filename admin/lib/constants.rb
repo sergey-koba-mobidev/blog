@@ -15,6 +15,6 @@ module Constants
   end
 
   def self.default_lang
-    'ru'
+    'en'
   end
 end
