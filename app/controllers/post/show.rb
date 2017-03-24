@@ -7,7 +7,11 @@ class Post < Sequel::Model(DB)
 
     def call(params)
       post = Post[params[:id]]
-      self.body = "<h1>#{post.title}</h1> <p>#{post.content}</p>"
+      render_layout PostCell.new(post)
+    end
+
+    def render_layout(content = '')
+      self.body = LayoutCell.new(nil).() { content }
     end
   end
 end

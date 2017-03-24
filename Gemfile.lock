@@ -1,6 +1,19 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    cells (4.1.6)
+      declarative-builder (< 0.2.0)
+      declarative-option (< 0.2.0)
+      tilt (>= 1.4, < 3)
+      uber (< 0.2.0)
+    cells-erb (0.1.0)
+      cells (~> 4.0)
+      erbse (>= 0.1.1)
+    declarative-builder (0.1.0)
+      declarative-option (< 0.2.0)
+    declarative-option (0.1.0)
+    erbse (0.1.1)
+      temple
     hanami-controller (0.8.1)
       hanami-utils (~> 0.9)
       rack (~> 1.6, >= 1.6.2)
@@ -20,6 +33,9 @@ GEM
     rack-test (0.6.3)
       rack (>= 1.0)
     sequel (4.44.0)
+    temple (0.8.0)
+    tilt (2.0.7)
+    uber (0.1.0)
     url_mount (0.2.1)
       rack
 
@@ -27,6 +43,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  cells
+  cells-erb
   hanami-controller
   hanami-router
   pg
