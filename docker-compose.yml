@@ -1,47 +1,16 @@
 version: '2'
 services:
-  bloglb:
-    ports:
-    - 80:80/tcp
-    labels:
-      io.rancher.container.create_agent: 'true'
-      io.rancher.container.agent.role: environmentAdmin
-      io.rancher.scheduler.affinity:host_label: blog=true
-    image: rancher/lb-service-haproxy:v0.4.6
-
-  db:
-    restart: always
-    image: postgres:latest
-    labels:
-      io.rancher.scheduler.affinity:host_label: blog=true
-    volumes:
-      - /var/lib/postgresql/data
-    environment:
-      POSTGRES_DB: blog
-    command: postgres -c fsync=off
-
-  admin:
-    labels:
-      io.rancher.container.pull_image: always
-      io.rancher.scheduler.affinity:host_label: blog=true
-    image: sergkoba/blog:latest-admin
+  web:
+    image: devblog/blog:latest
     command:  rackup --port 3000 --host 0.0.0.0
     links:
       - db
     environment:
       RACK_ENV: production
-      VIRTUAL_HOST: admin.1devblog.org
 
-  front:
-    labels:
-      io.rancher.container.pull_image: always
-      io.rancher.scheduler.affinity:host_label: blog=true
-    image: sergkoba/blog:latest
-    command:  rackup --port 3001 --host 0.0.0.0
-    links:
-      - db
+  db:
+    image: postgres:latest
     volumes:
-      - /app/public/sitemaps
+      - /var/lib/postgresql/data
     environment:
-      RACK_ENV: production
-      VIRTUAL_HOST: 1devblog.org
+      POSTGRES_DB: blog

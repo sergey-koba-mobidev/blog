@@ -1,49 +1,24 @@
 version: '2'
 services:
   db:
-    ports:
-      - "5437:5432"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: development
 
-  admin-bundler-cache:
+  web-bundler-cache:
     image: ruby:2.3.1
     command: echo 'Data Container for Ruby 2.3.1 bundled gems'
     volumes:
       - /usr/local/bundle
 
-  admin:
-    build: admin
-    command:  rerun -- rackup --port 3000 --host 0.0.0.0
+  web:
+    build: .
     volumes:
-      - ./admin:/app
+      - .:/app
     volumes_from:
-      - admin-bundler-cache
-    links:
-      - front
+      - web-bundler-cache
     ports:
       - "3000:3000"
-    environment:
-      RACK_ENV: development
-    stdin_open: true
-    tty: true
-
-  front-bundler-cache:
-    image: ruby:2.3.1
-    command: echo 'Data Container for Ruby 2.3.1 bundled gems'
-    volumes:
-      - /usr/local/bundle
-
-  front:
-    build: front
-    command:  rerun -- rackup --port 3001 --host 0.0.0.0
-    volumes:
-      - ./front:/app
-    volumes_from:
-      - front-bundler-cache
-    ports:
-      - "3001:3001"
     environment:
       RACK_ENV: development
     stdin_open: true

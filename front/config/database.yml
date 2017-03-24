@@ -1,5 +1,0 @@
-adapter: postgres
-host: db
-database: blog
-user: postgres
-password: development
