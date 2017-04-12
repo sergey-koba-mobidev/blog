@@ -6,6 +6,7 @@ class Router
   def self.app
     @@router = Hanami::Router.new(namespace: App::Controllers) do
       get '(/:lang)/', lang: /ru/, to: 'posts#index', as: :root
+      get '(/:lang)/rss', lang: /ru/, to: 'posts#rss'
       get '(/:lang)/page/:page', lang: /ru/, to: 'posts#index'
       get '(/:lang)/article/:slug', lang: /ru/, to: 'posts#show', as: :show_post
       get '(/:lang)/tag/:tag', lang: /ru/, to: 'tags#show', as: :show_tag

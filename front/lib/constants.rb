@@ -3,4 +3,8 @@ module Constants
     return ENV['API_TOKEN'] if ENV['RACK_ENV'] == 'production'
     return 'development_token'
   end
-end
+
+  def self.default_lang
+    'en'
+  end
+end#
