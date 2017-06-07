@@ -15,8 +15,13 @@ module WillPaginate
     protected
 
     def url(page)
-      return @template.respond_to?(:pagination_base_url) ? @template.pagination_base_url : '/' if page == 1
-      "#{@template.respond_to?(:pagination_base_url) ? @template.pagination_base_url : ''}/page/#{page}"
+      if page == 1
+        page_url = @template.respond_to?(:pagination_base_url) ? @template.pagination_base_url : '/'
+      else
+        page_url = "#{@template.respond_to?(:pagination_base_url) ? @template.pagination_base_url : ''}/page/#{page}"
+      end
+      page_url = '/' if page_url == ''
+      page_url
     end
 
     # For Boostrap
