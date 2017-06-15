@@ -229,9 +229,10 @@ a:hover {
 .b-wiziwig thead td {
     padding: 20px 30px;
 }
+
 /*wiziwig*/
 
-.b-wiziwig{
+.b-wiziwig {
     padding: 0 15px 9px 0;
 }
 
@@ -404,15 +405,26 @@ a:hover {
     font-size: 24px;
 }
 
-.b-blog-author__profesion{
+.b-blog-author__profesion {
     padding: 0 18px 12px;
 }
 
-.b-blog-author__paragraf{
+.b-blog-author__paragraf {
     padding: 0 3px;
     font-family: 'Conv_AvenirNextCyr-Medium', Arial, sans-serif;
     font-size: 16px;
     opacity: .5;
+}
+
+.b-blog-author__description a {
+    color: #337ab7;
+    text-decoration: none;
+    transition: opacity .3s;
+}
+
+.b-blog-author__description a:hover {
+    color: #23527c;
+    text-decoration: underline;
 }
 
 .b-social-list {
@@ -455,7 +467,7 @@ a:hover {
 
 .b-blog-author__goal {
     margin-bottom: 33px;
-    padding:26px 9px 28px 0;
+    padding: 26px 9px 28px 0;
     font-size: 14px;
     opacity: .9;
     border-top: 1px solid #e9e9ea;
@@ -480,7 +492,7 @@ a:hover {
     margin-bottom: 3px;
 }
 
-.b-blog-posts__title a{
+.b-blog-posts__title a {
     font-family: 'Conv_AvenirNextCyr-Medium', Arial, sans-serif;
     font-size: 16px;
     color: #1081de;
@@ -529,6 +541,7 @@ a:hover {
 .b-hamburger {
     display: none;
 }
+
 /*sidebar*/
 
 /*mobile version*/
@@ -547,7 +560,7 @@ a:hover {
         font-size: 20px;
     }
 
-    .b-header__container{
+    .b-header__container {
         padding: 15px 22px 15px 25px;
     }
 
@@ -559,40 +572,40 @@ a:hover {
         margin-left: 37px;
     }
 
-    .b-header__fork-me{
+    .b-header__fork-me {
         display: none;
     }
 
-    .b-languages-list{
+    .b-languages-list {
         font-size: 16px;
     }
 
-    .b-header__links{
+    .b-header__links {
         width: 70px;
     }
 
-    .b-blog-content{
+    .b-blog-content {
         padding: 0 25px;
     }
 
-    .b-blog-list{
+    .b-blog-list {
         float: none;
         width: 100%;
         padding-top: 13px;
         border-right: none;
     }
 
-    .b-blog-list-item__title{
+    .b-blog-list-item__title {
         margin-bottom: 10px;
         font-size: 28px;
         line-height: 33px;
     }
 
-    .b-blog-list-item__date{
+    .b-blog-list-item__date {
         margin-bottom: 20px;
     }
 
-    .b-wiziwig{
+    .b-wiziwig {
         line-height: 22px;
         padding-right: 0;
     }
@@ -628,20 +641,20 @@ a:hover {
         line-height: 40px;
     }
 
-    .b-btn-read{
+    .b-btn-read {
         height: 40px;
         font-size: 14px;
         line-height: 40px;
     }
 
-    .b-sidebar{
+    .b-sidebar {
         float: none;
         width: 100%;
         padding-top: 40px;
         padding-left: 0;
     }
 
-    .b-blog-author{
+    .b-blog-author {
         display: none;
     }
 
@@ -649,11 +662,11 @@ a:hover {
         margin-bottom: 16px;
     }
 
-    .b-blog-posts__date{
+    .b-blog-posts__date {
         font-size: 14px;
     }
 
-    .b-tags-container{
+    .b-tags-container {
         padding: 11px 0 15px 0;
     }
 
@@ -665,12 +678,12 @@ a:hover {
         margin-bottom: 14px;
     }
 
-    .b-blog-posts__post{
+    .b-blog-posts__post {
         margin-bottom: 15px;
         line-height: 23px;
     }
 
-    .b-footer__container{
+    .b-footer__container {
         padding: 20px 25px;
     }
 
@@ -681,7 +694,7 @@ a:hover {
 
     .b-hamburger {
         display: block;
-        position:absolute;
+        position: absolute;
         top: 14px;
         left: 15px;
         padding: 10px;
@@ -760,11 +773,11 @@ a:hover {
         height: 100%;
     }
 
-    .active-mob-sidebar .b-overlay{
+    .active-mob-sidebar .b-overlay {
         display: block;
     }
 
-    .active-mob-sidebar .m-blog-author_mob{
+    .active-mob-sidebar .m-blog-author_mob {
         -webkit-transform: translateX(0);
         transform: translateX(0);
     }
@@ -841,6 +854,7 @@ a:hover {
     .m-social-list__link_tw {
         background-position: 0 4px;
     }
+
     /*sidebar*/
     .b-search-result {
         margin-bottom: 4px;
@@ -856,6 +870,7 @@ a:hover {
 #disqus_thread {
     padding-right: 15px;
 }
+
 .hljs {
     margin-top: -30px;
     margin-bottom: 10px;

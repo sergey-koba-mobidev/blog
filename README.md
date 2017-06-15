@@ -9,7 +9,7 @@ You can find a working demo here: [http://1devblog.org/en](http://1devblog.org/e
 ## Installation
 - install Docker and DockerCompose
 - create alias in .bashrc `alias dcg="docker-compose -f docker-compose.yml -f docker-compose.dev.yml"`
-- run in root `dcg build`, then `./bin/setup.sh`
+- run in root `dcg build`, then `./bin/dev-setup.sh`
 - run `dcg run admin ./cli seed_admin pass` to create user `skoba` with pass `pass`
 - run app `dcg up -d`
 - go to [http://localhost:3001](http://localhost:3001) for Front and [http://localhost:3000](http://localhost:3000) for Admin 
