@@ -1,6 +1,6 @@
 class Post < Sequel::Model(DB)
   class PagedList < Trailblazer::Operation
-    PER_PAGE = 3
+    PER_PAGE = 5
 
     step :setup!
     step :get_posts!, name: 'posts.get'

@@ -7,7 +7,6 @@
   "version": "1.0.0",
   "license": "MIT",
   "dependencies": {
-    "bootstrap": "^3.3.7",
-    "highlightjs": "^9.8.0"
+    "bootstrap": "^3.3.7"
   }
 }
