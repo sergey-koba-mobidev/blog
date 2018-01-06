@@ -874,6 +874,7 @@ a:hover {
 .hljs {
     margin-top: -30px;
     margin-bottom: 10px;
+    overflow-x: scroll;
 }
 
 .hljs-ln td{
