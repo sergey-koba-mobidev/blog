@@ -2,12 +2,12 @@ general:
   back: Back
 seo:
   title: One developer blog
-  description: Sharing development experience in Web, Mobile and IoT
-  keywords: web, mobile, iot
+  description: Sharing development experience in Web, Blockchain, Mobile and IoT
+  keywords: web, blockchain, mobile, iot
 author:
   full_name: Serge Koba
-  skills: "Web, mobile and&nbsp;IoT developer"
-  about: "Web Team Lead at <a href=\"https://mobidev.biz/\" target=\"_blank\">MobiDev</a>, who likes learning new stuff non-stop. Main languages are: PHP and Ruby. Doesn't hesitate playing with mobile and IoT. We live until we learn something."
+  skills: "Web, blockchain, mobile and&nbsp;IoT developer"
+  about: "Web Team Lead at <a href=\"https://mobidev.biz/\" target=\"_blank\">MobiDev</a>, who likes learning new stuff non-stop. Main languages are: PHP and Ruby. Doesn't hesitate playing with blockchain, mobile and IoT. We live until we learn something."
 post:
   posts: Posts
   post: Post

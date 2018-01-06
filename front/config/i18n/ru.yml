@@ -2,12 +2,12 @@ general:
   back: Назад
 seo:
   title: One developer blog
-  description: Делюсь опытом в Веб, мобильной разработке и IoT
-  keywords: web, mobile, iot
+  description: Делюсь опытом в Веб, блокчейн, мобильной разработке и IoT
+  keywords: web, blockchain, mobile, iot
 author:
   full_name: Сергей Коба
-  skills: Веб, мобильная разработка и интернет вещей
-  about: 'Веб тимлид в <a href=\"https://mobidev.biz/\" target=\"_blank\">MobiDev</a>. Цель: изучать и учить чему-то новому без остановки. Основные языки: PHP и Ruby. Также интересно: мобильная разработка, IoT и DevOps. Жизненное кредо: я жив, пока я учу что-то новое.'
+  skills: Веб, блокчейн, мобильная разработка и интернет вещей
+  about: 'Веб тимлид в <a href=\"https://mobidev.biz/\" target=\"_blank\">MobiDev</a>. Цель: изучать и учить чему-то новому без остановки. Основные языки: PHP и Ruby. Также интересно: блокчейн, мобильная разработка, IoT и DevOps. Жизненное кредо: я жив, пока я учу что-то новое.'
 post:
   posts: Статьи
   post: Статья
