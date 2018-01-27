@@ -1,12 +1,7 @@
-FROM ruby:2.3.1
+FROM ruby:2.5.0-alpine
 
 # Pg
-RUN apt-get update -qq && apt-get install \
-    -y build-essential libpq-dev
-
-# Node Npm Bower
-RUN apt-get update -qq && apt-get install \
-    -y nodejs-legacy npm
+RUN apk --update --upgrade add postgresql-dev nodejs git build-base libffi-dev libgcc
 RUN npm install -g bower
 RUN echo '{ "allow_root": true }' > /root/.bowerrc
 
@@ -15,14 +10,10 @@ RUN mkdir $APP_ROOT
 WORKDIR $APP_ROOT
 
 # Bundle
-COPY Gemfile /app/Gemfile
-COPY Gemfile.lock /app/Gemfile.lock
+COPY . /app
 RUN gem update bundler && bundle install --jobs 4
 
 EXPOSE 3000
-
-# Copy the rest of Rails source
-COPY . /app
 
 # Run bower
 WORKDIR $APP_ROOT/public

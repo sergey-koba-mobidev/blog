@@ -8,7 +8,7 @@ services:
       POSTGRES_PASSWORD: development
 
   admin-bundler-cache:
-    image: ruby:2.3.1
+    image: ruby:2.5.0-alpine
     command: echo 'Data Container for Ruby 2.3.1 bundled gems'
     volumes:
       - /usr/local/bundle
@@ -30,7 +30,7 @@ services:
     tty: true
 
   front-bundler-cache:
-    image: ruby:2.3.1
+    image: ruby:2.5.0-alpine
     command: echo 'Data Container for Ruby 2.3.1 bundled gems'
     volumes:
       - /usr/local/bundle
