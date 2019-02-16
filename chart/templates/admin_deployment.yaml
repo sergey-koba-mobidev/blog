@@ -28,7 +28,7 @@ spec:
             - name: RACK_ENV
               value: "production"
             - name: POSTGRES_HOST
-              value: "{{ .Chart.Name }}-postgres-service"
+              value: "46.101.253.11"
           envFrom:
             - secretRef:
                 name: "{{ include "chart.name" . }}-postgres-secret"
