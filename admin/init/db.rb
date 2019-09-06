@@ -13,6 +13,7 @@ if File.exist?(db_config_file)
   DB = Sequel.connect(config)
   Sequel.extension :migration
   Sequel.extension :pagination
+  Sequel::Model.plugin :force_encoding, 'UTF-8'
   Sequel::Model.db.extension(:pagination)
   require 'will_paginate/sequel'
 end

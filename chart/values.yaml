@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: repo.treescale.com/skoba/blog
+  repository: cloud.canister.io:5000/skoba/blog
   tag: latest
   pullPolicy: IfNotPresent
 

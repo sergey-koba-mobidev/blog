@@ -3,12 +3,12 @@
 UNIXTIME=$(date +%s)
 
 cd ./front
-docker build -f Dockerfile.prod -t repo.treescale.com/skoba/blog:build-$UNIXTIME .
-docker push repo.treescale.com/skoba/blog:build-$UNIXTIME
+docker build -f Dockerfile.prod -t cloud.canister.io:5000/skoba/blog:build-$UNIXTIME .
+docker push cloud.canister.io:5000/skoba/blog:build-$UNIXTIME
 
 cd ../admin
-docker build -f Dockerfile.prod -t repo.treescale.com/skoba/blog-admin:build-$UNIXTIME .
-docker push repo.treescale.com/skoba/blog-admin:build-$UNIXTIME
+docker build -f Dockerfile.prod -t cloud.canister.io:5000/skoba/blog-admin:build-$UNIXTIME .
+docker push cloud.canister.io:5000/skoba/blog-admin:build-$UNIXTIME
 
 cd ..
 helm upgrade -i --set image.tag=build-$UNIXTIME --wait --namespace default blog ./chart
