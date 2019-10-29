@@ -54,7 +54,7 @@ GEM
     erbse (0.1.1)
       temple
     erubis (2.7.0)
-    ffi (1.9.14)
+    ffi (1.11.1)
     hanami-controller (0.8.1)
       hanami-utils (~> 0.9)
       rack (~> 1.6, >= 1.6.2)
