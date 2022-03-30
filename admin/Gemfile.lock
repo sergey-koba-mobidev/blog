@@ -1,17 +1,17 @@
 GIT
-  remote: git://github.com/trailblazer/formular.git
-  revision: ee6fe2a18751ed56caf94ab8b8c96df44a220367
+  remote: https://github.com/trailblazer/formular.git
+  revision: 807864127697bc51437201d21f8a22f26838f4f3
   specs:
-    formular (0.2.1)
+    formular (0.2.3)
       declarative (~> 0.0.4)
       uber (>= 0.0.11, < 0.2.0)
 
 GIT
-  remote: git://github.com/trailblazer/roar.git
-  revision: 020beef5a19a96feda8626fb5e0581b305f384d5
+  remote: https://github.com/trailblazer/roar.git
+  revision: 80acd9adf1335ea4683bd53575fc899c158661e2
   specs:
-    roar (1.1.0)
-      representable (~> 3.0.0)
+    roar (1.1.1)
+      representable (~> 3.0)
 
 GEM
   remote: https://rubygems.org/
@@ -93,6 +93,7 @@ GEM
     method_source (0.8.2)
     multi_json (1.12.1)
     multipart-post (2.0.0)
+    nio4r (2.5.8)
     pg (0.19.0)
     pipetree (0.0.5)
       uber
@@ -100,7 +101,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    puma (3.6.2)
+    puma (4.3.12)
+      nio4r (~> 2.0)
     rack (1.6.5)
     rack-console (1.3.1)
       rack (>= 1.1)
