@@ -83,7 +83,7 @@ GEM
       slop (~> 3.4)
     puma (3.6.2)
     r18n-core (2.1.4)
-    rack (1.6.5)
+    rack (1.6.13)
     rack-console (1.3.1)
       rack (>= 1.1)
       rack-test
